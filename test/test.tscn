@@ -5,7 +5,10 @@
 [node name="Node2D" type="Node2D" unique_id=2019131375]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602343374]
+position = Vector2(540, 960)
 scale = Vector2(1.78, 1.78)
 texture = ExtResource("1_syuel")
+offset = Vector2(0.025, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=405187352]
+position = Vector2(540, 960)
