@@ -13,7 +13,8 @@ config_version=5
 config/name="SuikaGame"
 run/main_scene="uid://d2682g4r85urc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="uid://c414daqfqyq2c"
 
 [autoload]
 
@@ -36,6 +37,13 @@ naming/script_name_casing=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SimpleFormatOnSave/plugin.cfg", "res://addons/godot-yandex-games-sdk/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://_Addons/": "gray",
+"res://_Builds/": "gray"
+}
 
 [physics]
 
