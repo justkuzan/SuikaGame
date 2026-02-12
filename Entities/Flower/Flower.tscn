@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://qyujkm7cxdor" path="res://Entities/Flower/Flower.gd" id="1_hfqmi"]
 [ext_resource type="Texture2D" uid="uid://bmokhxpn5877l" path="res://Assets/Sprites/TestObjects/1.png" id="1_phfco"]
-[ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="2_cbsr3"]
+[ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="2_cbsr3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbxml"]
+resource_local_to_scene = true
 radius = 64.00781
 
 [node name="Flower" type="RigidBody2D" unique_id=182945636]

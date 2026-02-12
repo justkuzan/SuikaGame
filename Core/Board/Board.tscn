@@ -12,6 +12,7 @@ size = Vector2(60, 1930)
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2006474783]
 offset_right = 1080.0
 offset_bottom = 1920.0
+mouse_filter = 2
 color = Color(0.18281268, 0.07846785, 0, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=980712415]
