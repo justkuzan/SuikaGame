@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FlowerData" format=3 uid="uid://bdk5khh6tn1nx"]
+
+[ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="1_f5cal"]
+[ext_resource type="Texture2D" uid="uid://5y0i51ooh5yn" path="res://Assets/Sprites/Flowers/lvl_6.png" id="2_jpant"]
+
+[resource]
+script = ExtResource("1_f5cal")
+lvl = 6
+collision_radius = 98.0
+sprite = ExtResource("2_jpant")
+metadata/_custom_type_script = "uid://tldxv83eax52"

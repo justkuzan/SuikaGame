@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dndeosps4einw"
-path="res://.godot/imported/2.png-500d8c30693adc3e8fe75bc4a99efd4a.ctex"
+uid="uid://5y0i51ooh5yn"
+path="res://.godot/imported/lvl_6.png-bf3b34045e0c618af409f03d5b5ae2b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TestObjects/2.png"
-dest_files=["res://.godot/imported/2.png-500d8c30693adc3e8fe75bc4a99efd4a.ctex"]
+source_file="res://Assets/Sprites/Flowers/lvl_6.png"
+dest_files=["res://.godot/imported/lvl_6.png-bf3b34045e0c618af409f03d5b5ae2b2.ctex"]
 
 [params]
 

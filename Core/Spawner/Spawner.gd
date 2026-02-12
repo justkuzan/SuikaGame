@@ -4,15 +4,21 @@ class_name Spawner
 
 #signal flower_dropped
 
+@export var test_flower_data: FlowerData
+
 const FLOWER = preload("uid://daiia8h0goc0c")
 const POS_LIM_MIN: Vector2 = Vector2(110.0, 200.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 200.0)
 
-@onready var flower: Flower = $Flower
 @onready var spawn_timer: Timer = $SpawnTimer
+var flower: Flower = null
 
 
-func _process(delta: float) -> void:
+func _ready() -> void:
+	spawn_flower()
+
+
+func _physics_process(delta: float) -> void:
 	update_position()
 
 
@@ -29,6 +35,7 @@ func update_position() -> void:
 
 func drop_flower() -> void:
 	flower.freeze = false
+	flower.linear_velocity = Vector2(0, 200)
 	flower.reparent(get_parent())
 	#flower_dropped.emit(flower)
 	flower = null
@@ -41,12 +48,8 @@ func _on_spawn_timer_timeout() -> void:
 
 func spawn_flower() -> void:
 	if !flower:
-		var new_flower = FLOWER.instantiate()
-		add_child(new_flower)
+		var new_flower = FLOWER.instantiate() as Flower
+		new_flower.flower_data = test_flower_data
 		new_flower.position = Vector2.ZERO
+		add_child(new_flower)
 		flower = new_flower
-	
-	
-	
-	
-	

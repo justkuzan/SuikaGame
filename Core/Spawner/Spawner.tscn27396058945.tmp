@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://bgaevyvwgoirs"]
 
 [ext_resource type="Script" uid="uid://daihv2sgntk7q" path="res://Core/Spawner/Spawner.gd" id="1_4riai"]
-[ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="2_xbuyw"]
+[ext_resource type="PackedScene" uid="uid://daiia8h0goc0c" path="res://Entities/Flower/Flower.tscn" id="2_xbuyw"]
+[ext_resource type="Resource" uid="uid://7j7i336ncpib" path="res://Resources/Flowers/Flower_lvl_2.tres" id="3_kli2t"]
 
 [node name="Spawner" type="Node2D" unique_id=967311033]
 script = ExtResource("1_4riai")
-test_flower_data = ExtResource("2_xbuyw")
+
+[node name="Flower" parent="." unique_id=182945636 instance=ExtResource("2_xbuyw")]
+input_pickable = true
+flower_data = ExtResource("3_kli2t")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=74045991]
-wait_time = 0.65
+wait_time = 0.8
 one_shot = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
