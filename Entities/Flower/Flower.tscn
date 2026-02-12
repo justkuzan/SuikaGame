@@ -9,6 +9,7 @@ resource_local_to_scene = true
 radius = 64.00781
 
 [node name="Flower" type="RigidBody2D" unique_id=182945636]
+freeze = true
 script = ExtResource("1_hfqmi")
 flower_data = ExtResource("2_cbsr3")
 
