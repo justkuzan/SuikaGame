@@ -1,10 +1,9 @@
 extends RigidBody2D
-
 class_name Flower
 
-@export var flower_data: FlowerData
-
 const DEFAULT_SPRITE = preload("uid://bxymses568v8i")
+
+@export var flower_data: FlowerData
 
 @onready var flower_sprite: Sprite2D = $FlowerSprite
 @onready var flower_collision: CollisionShape2D = $FlowerCollision

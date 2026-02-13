@@ -1,24 +1,26 @@
 extends Node2D
-
 class_name Spawner
 
 #signal flower_dropped
-
-@export var test_flower_data: FlowerData
 
 const FLOWER = preload("uid://daiia8h0goc0c")
 const POS_LIM_MIN: Vector2 = Vector2(110.0, 200.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 200.0)
 
-@onready var spawn_timer: Timer = $SpawnTimer
+@export var flower_data: FlowerData
+@export var flower_pool: Array[FlowerData] = []
+
 var flower: Flower = null
+
+@onready var spawn_timer: Timer = $SpawnTimer
+@onready var guide_stripe: Sprite2D = $GuideStripe
 
 
 func _ready() -> void:
 	spawn_flower()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	update_position()
 
 
@@ -46,10 +48,26 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_flower()
 
 
+func spawn_drop_rate_calculation() -> FlowerData:
+	var total_rate: float = 0.0
+	for i in flower_pool:
+		total_rate += i.drop_rate
+	
+	var roll: float = randf_range(0.0, total_rate)
+	for i in flower_pool:
+		roll -= i.drop_rate
+		if roll <= 0:
+			return i
+	return null
+
+
 func spawn_flower() -> void:
 	if !flower:
-		var new_flower = FLOWER.instantiate() as Flower
-		new_flower.flower_data = test_flower_data
-		new_flower.position = Vector2.ZERO
-		add_child(new_flower)
-		flower = new_flower
+		var random_data = spawn_drop_rate_calculation()
+		if random_data:
+			var new_flower = FLOWER.instantiate() as Flower
+			new_flower.flower_data = random_data
+		
+			new_flower.position = Vector2.ZERO
+			add_child(new_flower)
+			flower = new_flower

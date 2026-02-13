@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_hpuk5")
 lvl = 4
+drop_rate = 10.0
 collision_radius = 80.0
 sprite = ExtResource("2_ip1lj")
 metadata/_custom_type_script = "uid://tldxv83eax52"
