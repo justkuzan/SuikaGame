@@ -25,8 +25,11 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if flower and event.is_action_pressed("drop"):
+		guide_stripe_visibility_on()
 	if flower and event.is_action_released("drop"):
 		drop_flower()
+		guide_stripe_visibility_off()
 
 
 func update_position() -> void:
@@ -71,3 +74,19 @@ func spawn_flower() -> void:
 			new_flower.position = Vector2.ZERO
 			add_child(new_flower)
 			flower = new_flower
+
+
+func guide_stripe_visibility_on() -> void:
+	guide_stripe.modulate.a = 0.0
+	guide_stripe.show()
+	
+	var tween = create_tween()
+	tween.tween_property(guide_stripe, "modulate:a", 1.0, 0.2).set_trans(Tween.TRANS_SINE)
+
+
+func guide_stripe_visibility_off() -> void:
+	guide_stripe.modulate.a = 1.0
+	guide_stripe.show()
+	
+	var tween = create_tween()
+	tween.tween_property(guide_stripe, "modulate:a", 0.0, 0.1).set_trans(Tween.TRANS_SINE)
