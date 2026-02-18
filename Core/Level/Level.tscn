@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d2682g4r85urc"]
+
+[ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
+[ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="2_eotdc"]
+[ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
+[ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
+
+[node name="Level" type="Node2D" unique_id=556264147]
+script = ExtResource("1_5iy7f")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
+position = Vector2(540, 960)
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1532605914]
+position = Vector2(540, 960)
+scale = Vector2(1.995, 1.995)
+texture = ExtResource("2_eotdc")
+offset = Vector2(0.025, 0)
+metadata/_edit_lock_ = true
+
+[node name="Walls" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
+position = Vector2(0, -80)
+metadata/_edit_lock_ = true
+
+[node name="Spawner" parent="." unique_id=967311033 instance=ExtResource("4_xvumq")]
+
+[node name="FlowersContainer" type="Node2D" parent="." unique_id=730555205]

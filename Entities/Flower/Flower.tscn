@@ -4,17 +4,20 @@
 [ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="2_cbsr3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hfqmi"]
+resource_local_to_scene = true
 bounce = 0.08
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbxml"]
 resource_local_to_scene = true
 radius = 62.0
 
-[node name="Flower" type="RigidBody2D" unique_id=182945636]
+[node name="Flower" type="RigidBody2D" unique_id=182945636 groups=["flowers"]]
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_hfqmi")
 gravity_scale = 2.0
 freeze = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_hfqmi")
 flower_data = ExtResource("2_cbsr3")
 
@@ -22,3 +25,5 @@ flower_data = ExtResource("2_cbsr3")
 
 [node name="FlowerCollision" type="CollisionShape2D" parent="." unique_id=1621350937]
 shape = SubResource("CircleShape2D_xbxml")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

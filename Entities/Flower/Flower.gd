@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name Flower
 
+
 const DEFAULT_SPRITE = preload("uid://bxymses568v8i")
 
 @export var flower_data: FlowerData
@@ -20,3 +21,11 @@ func _ready() -> void:
 
 	else:
 		print("There is no shape on Flower!")
+
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("flowers"):
+		if body is Flower:
+			if flower_data == body.flower_data:
+				if get_instance_id() > body.get_instance_id():
+					SignalBus.on_flower_collide.emit(self.global_position, self.flower_data, self, body)

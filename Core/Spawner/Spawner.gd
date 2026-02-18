@@ -13,6 +13,7 @@ var flower: Flower = null
 
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var guide_stripe: Sprite2D = $GuideStripe
+@onready var flowers_container: Node2D = $"../FlowersContainer"
 
 
 func _ready() -> void:
@@ -41,7 +42,7 @@ func update_position() -> void:
 func drop_flower() -> void:
 	flower.freeze = false
 	flower.linear_velocity = Vector2(0, 200)
-	flower.reparent(get_parent())
+	flower.reparent(flowers_container)
 	#flower_dropped.emit(flower)
 	flower = null
 	spawn_timer.start()

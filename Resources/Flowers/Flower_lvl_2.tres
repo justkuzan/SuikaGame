@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="FlowerData" format=3 uid="uid://7j7i336ncpib"]
 
+[ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="1_jjobf"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="1_xuv68"]
 [ext_resource type="Texture2D" uid="uid://t7otrltqvxdx" path="res://Assets/Sprites/Flowers/lvl_2.png" id="2_fsno2"]
 
 [resource]
 script = ExtResource("1_xuv68")
 lvl = 2
+next_level = ExtResource("1_jjobf")
 drop_rate = 30.0
 collision_radius = 66.0
 sprite = ExtResource("2_fsno2")

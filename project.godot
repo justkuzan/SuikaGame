@@ -18,7 +18,7 @@ config/icon="uid://c414daqfqyq2c"
 
 [autoload]
 
-YandexSDK="*uid://bgahdwlw1j0ss"
+SignalBus="*uid://5wkgn732bie"
 
 [display]
 
@@ -44,6 +44,10 @@ folder_colors={
 "res://_Addons/": "gray",
 "res://_Builds/": "gray"
 }
+
+[global_group]
+
+flowers=""
 
 [input]
 
