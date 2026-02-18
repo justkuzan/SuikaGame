@@ -7,7 +7,6 @@ const FLOWER = preload("uid://daiia8h0goc0c")
 const POS_LIM_MIN: Vector2 = Vector2(110.0, 200.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 200.0)
 
-@export var flower_data: FlowerData
 @export var flower_pool: Array[FlowerData] = []
 
 var flower: Flower = null
@@ -25,11 +24,12 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if flower and event.is_action_pressed("drop"):
-		guide_stripe_visibility_on()
-	if flower and event.is_action_released("drop"):
-		drop_flower()
-		guide_stripe_visibility_off()
+	if flower:
+		if event.is_action_pressed("drop"):
+			guide_stripe_visibility_on()
+		elif event.is_action_released("drop"):
+			drop_flower()
+			guide_stripe_visibility_off()
 
 
 func update_position() -> void:
