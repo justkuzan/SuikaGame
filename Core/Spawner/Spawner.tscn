@@ -50,7 +50,7 @@ script = ExtResource("1_4riai")
 flower_pool = Array[ExtResource("3_xgoj3")]([ExtResource("4_w6knh"), ExtResource("2_xbuyw"), ExtResource("5_60x31"), ExtResource("6_6l7u3"), ExtResource("7_gicmt")])
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=74045991]
-wait_time = 0.3
+wait_time = 0.5
 one_shot = true
 
 [node name="GuideStripe" type="Sprite2D" parent="." unique_id=1527332510]

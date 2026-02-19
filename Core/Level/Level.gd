@@ -19,4 +19,8 @@ func on_flower_collide(position: Vector2, data: FlowerData, flower_a: RigidBody2
 		new_flower.freeze = false
 		flowers_container.add_child(new_flower)
 		new_flower.global_position = position
-		new_flower.linear_velocity = Vector2(0, -1000)
+
+		new_flower.linear_velocity = Vector2(0, -700)
+
+		var random_spin = randf_range(-50.0, 50.0)
+		new_flower.apply_torque_impulse(random_spin)

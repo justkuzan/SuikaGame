@@ -22,6 +22,13 @@ func _ready() -> void:
 		print("There is no shape on Flower!")
 
 
+func _physics_process(delta: float) -> void:
+	if linear_velocity.y > 0:
+		gravity_scale = 2.0
+	else:
+		gravity_scale = 1.0
+
+
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("flowers"):
 		if body is Flower:

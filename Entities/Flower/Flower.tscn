@@ -5,19 +5,18 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hfqmi"]
 resource_local_to_scene = true
-bounce = 0.08
+bounce = 0.15
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbxml"]
 resource_local_to_scene = true
 radius = 62.0
 
 [node name="Flower" type="RigidBody2D" unique_id=182945636 groups=["flowers"]]
-mass = 0.1
+mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_hfqmi")
-gravity_scale = 2.0
 freeze = true
 contact_monitor = true
-max_contacts_reported = 1
+max_contacts_reported = 8
 script = ExtResource("1_hfqmi")
 flower_data = ExtResource("2_cbsr3")
 
