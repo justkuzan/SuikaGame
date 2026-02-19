@@ -1,7 +1,6 @@
 extends RigidBody2D
 class_name Flower
 
-
 const DEFAULT_SPRITE = preload("uid://bxymses568v8i")
 
 @export var flower_data: FlowerData

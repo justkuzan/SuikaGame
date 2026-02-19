@@ -36,12 +36,12 @@ naming/script_name_casing=1
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/SimpleFormatOnSave/plugin.cfg", "res://addons/minimize_html_build/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
-"res://_Addons/": "gray",
+"res://Addons/": "gray",
 "res://_Builds/": "gray"
 }
 
