@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dvk3rdpl0y03s"]
+
+[ext_resource type="Texture2D" uid="uid://cdr2bo2vomsc4" path="res://Assets/Sprites/TestObjects/leaves.png" id="1_uuoa4"]
+[ext_resource type="Script" uid="uid://cnwhrb8h6qx6k" path="res://Core/MergeEffects/MergeEffects.gd" id="1_xqaa8"]
+[ext_resource type="Texture2D" uid="uid://bnjo05vjvshnv" path="res://Assets/Sprites/TestObjects/petal1.png" id="3_676sq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xqaa8"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_xqaa8"]
+offsets = PackedFloat32Array(0.7188612, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1qfhv"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="MergeEffects" type="Node2D" unique_id=658350261]
+z_index = 10
+script = ExtResource("1_xqaa8")
+
+[node name="LeavesParticles" type="CPUParticles2D" parent="." unique_id=818973486]
+material = SubResource("CanvasItemMaterial_xqaa8")
+emitting = false
+amount = 10
+texture = ExtResource("1_uuoa4")
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -10)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 200.0
+initial_velocity_max = 350.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 1.75
+scale_amount_max = 1.75
+color_ramp = SubResource("Gradient_xqaa8")
+anim_offset_max = 1.0
+
+[node name="PetalParticles" type="CPUParticles2D" parent="." unique_id=1541622677]
+material = SubResource("CanvasItemMaterial_1qfhv")
+emitting = false
+amount = 4
+texture = ExtResource("3_676sq")
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -10)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 200.0
+initial_velocity_max = 350.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 1.75
+scale_amount_max = 1.75
+color_ramp = SubResource("Gradient_xqaa8")
+anim_offset_max = 1.0
+
+[connection signal="finished" from="LeavesParticles" to="." method="_on_leaves_particles_finished"]
+[connection signal="finished" from="PetalParticles" to="." method="_on_leaves_particles_finished"]

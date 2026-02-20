@@ -2,6 +2,7 @@ extends Node2D
 class_name Level
 
 const FLOWER = preload("uid://daiia8h0goc0c")
+const MERGE_EFFECTS = preload("uid://dvk3rdpl0y03s")
 const SPIN_DIRECTION: Array = [-20.0, 20.0]
 
 @onready var flowers_container: Node2D = $FlowersContainer
@@ -24,3 +25,8 @@ func on_flower_collide(position: Vector2, data: FlowerData, flower_a: RigidBody2
 
 		new_flower.linear_velocity = Vector2(0, -700)
 		new_flower.apply_torque_impulse(SPIN_DIRECTION.pick_random())
+
+		var merge_effects = MERGE_EFFECTS.instantiate() as MergeEffects
+		add_child(merge_effects)
+		merge_effects.global_position = position
+		merge_effects.setup(data)

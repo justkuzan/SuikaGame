@@ -6,6 +6,7 @@ class_name FlowerData
 @export var drop_rate: float = 0.0
 @export var collision_radius: float = 64.0
 @export var sprite: Texture2D
+@export var petal_sprite: Texture2D
 
 #Flowers drop percentage table:
 #1 lvl - 40
