@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="5_60x31"]
 [ext_resource type="Resource" uid="uid://dy00busap6wjy" path="res://Resources/Flowers/Flower_lvl_4.tres" id="6_6l7u3"]
 [ext_resource type="Resource" uid="uid://oblfcyuykp6w" path="res://Resources/Flowers/Flower_lvl_5.tres" id="7_gicmt"]
+[ext_resource type="AudioStream" uid="uid://dgc2o6h6253sj" path="res://Assets/Sounds/Test/swosh-37.mp3" id="8_w6knh"]
 
 [sub_resource type="Gradient" id="Gradient_xgoj3"]
 offsets = PackedFloat32Array(0.55421686, 1)
@@ -30,5 +31,10 @@ visible = false
 position = Vector2(0, 791)
 scale = Vector2(0.8, 24)
 texture = SubResource("GradientTexture2D_w6knh")
+
+[node name="DropSound" type="AudioStreamPlayer" parent="." unique_id=1109619998]
+stream = ExtResource("8_w6knh")
+volume_db = -20.0
+pitch_scale = 2.08
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

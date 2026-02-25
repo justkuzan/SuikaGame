@@ -1,19 +1,17 @@
 extends Node2D
 class_name Spawner
 
-#signal flower_dropped
-
 const FLOWER = preload("uid://daiia8h0goc0c")
 const POS_LIM_MIN: Vector2 = Vector2(110.0, 200.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 200.0)
 
 @export var flower_pool: Array[FlowerData] = []
+@export var flowers_container: Node2D
 
 var flower: Flower = null
 
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var guide_stripe: Sprite2D = $GuideStripe
-@onready var flowers_container: Node2D = $"../FlowersContainer"
 
 
 func _ready() -> void:
@@ -83,16 +81,16 @@ func spawn_flower() -> void:
 
 
 func guide_stripe_visibility_on() -> void:
-	guide_stripe.modulate.a = 0.0
+	#guide_stripe.modulate.a = 0.0
 	guide_stripe.show()
 
-	var tween = create_tween()
-	tween.tween_property(guide_stripe, "modulate:a", 1.0, 0.2).set_trans(Tween.TRANS_SINE)
+	#var tween = create_tween()
+	#tween.tween_property(guide_stripe, "modulate:a", 1.0, 0.2).set_trans(Tween.TRANS_SINE)
 
 
 func guide_stripe_visibility_off() -> void:
-	guide_stripe.modulate.a = 1.0
-	guide_stripe.show()
+	#guide_stripe.modulate.a = 1.0
+	guide_stripe.hide()
 
-	var tween = create_tween()
-	tween.tween_property(guide_stripe, "modulate:a", 0.0, 0.1).set_trans(Tween.TRANS_SINE)
+	#var tween = create_tween()
+	#tween.tween_property(guide_stripe, "modulate:a", 0.0, 0.1).set_trans(Tween.TRANS_SINE)
