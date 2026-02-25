@@ -13,6 +13,9 @@ func _ready() -> void:
 
 
 func on_flower_collide(position: Vector2, data: FlowerData, flower_a: RigidBody2D, flower_b: RigidBody2D) -> void:
+	if flower_a.is_queued_for_deletion() or flower_b.is_queued_for_deletion():
+		return
+
 	flower_a.queue_free()
 	flower_b.queue_free()
 	if data.next_level != null:

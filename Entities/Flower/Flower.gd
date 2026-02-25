@@ -17,16 +17,24 @@ func _ready() -> void:
 
 	if flower_data and flower_collision.shape is CircleShape2D:
 		flower_collision.shape.radius = flower_data.collision_radius
-
 	else:
 		print("There is no shape on Flower!")
+
+	if flower_data:
+		mass = flower_data.mass
 
 
 func _physics_process(delta: float) -> void:
 	if linear_velocity.y > 0:
 		gravity_scale = 2.0
+		linear_damp = 0.0
 	else:
 		gravity_scale = 1.0
+
+		if linear_velocity.length() < 5:
+			linear_damp = 5.0
+		else:
+			linear_damp = 0.5
 
 
 func _on_body_entered(body: Node) -> void:

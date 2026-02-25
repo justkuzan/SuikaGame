@@ -2,9 +2,10 @@ extends Resource
 class_name FlowerData
 
 @export var lvl: int = 1
-@export var next_level: FlowerData
-@export var drop_rate: float = 0.0
+@export var mass: float = 1.0
 @export var collision_radius: float = 64.0
+@export var drop_rate: float = 0.0
+@export var next_level: FlowerData
 @export var sprite: Texture2D
 @export var petal_sprite: Texture2D
 

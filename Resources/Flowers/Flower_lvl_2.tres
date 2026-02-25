@@ -3,14 +3,15 @@
 [ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="1_jjobf"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="1_xuv68"]
 [ext_resource type="Texture2D" uid="uid://t7otrltqvxdx" path="res://Assets/Sprites/Flowers/lvl_2.png" id="2_fsno2"]
-[ext_resource type="Texture2D" uid="uid://bur7uv6adrkii" path="res://Assets/Sprites/TestObjects/petal2.png" id="2_rf8nw"]
+[ext_resource type="Texture2D" uid="uid://cdr2bo2vomsc4" path="res://Assets/Sprites/TestObjects/leaves.png" id="2_rf8nw"]
 
 [resource]
 script = ExtResource("1_xuv68")
 lvl = 2
-next_level = ExtResource("1_jjobf")
-drop_rate = 30.0
+mass = 0.15
 collision_radius = 66.0
+drop_rate = 30.0
+next_level = ExtResource("1_jjobf")
 sprite = ExtResource("2_fsno2")
 petal_sprite = ExtResource("2_rf8nw")
 metadata/_custom_type_script = "uid://tldxv83eax52"
