@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://donyt0ner6305"]
+
+[sub_resource type="Gradient" id="Gradient_ltjle"]
+offsets = PackedFloat32Array(0.5904059, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndacq"]
+gradient = SubResource("Gradient_ltjle")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="VisualEffects" type="Node2D" unique_id=576478715]
+
+[node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ndacq")

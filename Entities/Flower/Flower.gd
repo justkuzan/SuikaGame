@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		gravity_scale = 1.0
 
 		if linear_velocity.length() < 5:
-			linear_damp = 5.0
+			linear_damp = 5
 		else:
 			linear_damp = 0.5
 

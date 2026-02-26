@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjo05vjvshnv"
-path="res://.godot/imported/petal1.png-858320f6128f4bbc5d4f49160e63e713.ctex"
+uid="uid://cw3n1osocdaew"
+path="res://.godot/imported/lvl_1_effects.png-3c7685dec5e7aa30ebac8f0713736157.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TestObjects/petal1.png"
-dest_files=["res://.godot/imported/petal1.png-858320f6128f4bbc5d4f49160e63e713.ctex"]
+source_file="res://Assets/Sprites/FlowerEffects/lvl_1_effects.png"
+dest_files=["res://.godot/imported/lvl_1_effects.png-3c7685dec5e7aa30ebac8f0713736157.ctex"]
 
 [params]
 

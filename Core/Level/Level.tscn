@@ -4,10 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="2_eotdc"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
+[ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/VisualEffects/VisualEffects.tscn" id="6_522nl"]
+[ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnController/SpawnController.tscn" id="7_8t823"]
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeHandler/MergeHandler.tscn" id="7_13dte"]
 
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
+
+[node name="VisualEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
 position = Vector2(540, 960)
@@ -24,10 +28,14 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -80)
 metadata/_edit_lock_ = true
 
-[node name="Spawner" parent="." unique_id=967311033 node_paths=PackedStringArray("flowers_container") instance=ExtResource("4_xvumq")]
+[node name="Spawner" parent="." unique_id=967311033 node_paths=PackedStringArray("flowers_container", "spawn_controller") instance=ExtResource("4_xvumq")]
 flowers_container = NodePath("../FlowerContainer")
+spawn_controller = NodePath("../SpawnController")
 
 [node name="MergeHandler" parent="." unique_id=731583569 node_paths=PackedStringArray("flowers_container") instance=ExtResource("7_13dte")]
 flowers_container = NodePath("../FlowerContainer")
 
 [node name="FlowerContainer" type="Node2D" parent="." unique_id=1583152697]
+
+[node name="SpawnController" parent="." unique_id=2099989366 node_paths=PackedStringArray("spawner") instance=ExtResource("7_8t823")]
+spawner = NodePath("../Spawner")
