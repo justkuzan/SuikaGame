@@ -3,6 +3,7 @@
 [ext_resource type="Resource" uid="uid://cbroca2io0ch7" path="res://Resources/Flowers/Flower_lvl_9.tres" id="1_5i2vo"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="1_olgat"]
 [ext_resource type="Texture2D" uid="uid://4opx2wtcscc1" path="res://Assets/Sprites/Flowers/lvl_8.png" id="2_g3qx0"]
+[ext_resource type="Texture2D" uid="uid://blq3ryqw3n2c3" path="res://Assets/Sprites/FlowerEffects/lvl_8_effects.png" id="2_qv4eu"]
 
 [resource]
 script = ExtResource("1_olgat")
@@ -11,4 +12,5 @@ mass = 6.0
 collision_radius = 119.0
 next_level = ExtResource("1_5i2vo")
 sprite = ExtResource("2_g3qx0")
+petal_sprite = ExtResource("2_qv4eu")
 metadata/_custom_type_script = "uid://tldxv83eax52"

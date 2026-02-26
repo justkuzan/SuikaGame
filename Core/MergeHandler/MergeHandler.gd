@@ -33,3 +33,13 @@ func on_flower_collide(position: Vector2, data: FlowerData, flower_a: RigidBody2
 		add_child(merge_effects)
 		merge_effects.global_position = position
 		merge_effects.setup(data)
+
+		AudioManager.play("merge")
+
+	if data.next_level == null:
+		var merge_effects = MERGE_EFFECTS.instantiate() as MergeEffects
+		add_child(merge_effects)
+		merge_effects.global_position = position
+		merge_effects.last_lvl_setup(data)
+
+		AudioManager.play("merge")

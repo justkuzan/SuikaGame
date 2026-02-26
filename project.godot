@@ -19,6 +19,7 @@ config/icon="uid://c414daqfqyq2c"
 [autoload]
 
 SignalBus="*uid://5wkgn732bie"
+AudioManager="*uid://oq71npodsb8n"
 
 [display]
 
@@ -60,6 +61,7 @@ drop={
 
 [physics]
 
+common/physics_jitter_fix=1.0
 3d/physics_engine="Jolt Physics"
 
 [rendering]

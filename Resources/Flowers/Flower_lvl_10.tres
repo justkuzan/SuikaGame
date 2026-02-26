@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="FlowerData" format=3 uid="uid://dcx17wa75bo80"]
 
+[ext_resource type="Texture2D" uid="uid://ctjhjtl1ya4og" path="res://Assets/Sprites/FlowerEffects/lvl_10_effects.png" id="1_sqomo"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="1_u12i1"]
 [ext_resource type="Texture2D" uid="uid://ctntmskfgdpy3" path="res://Assets/Sprites/Flowers/lvl_10.png" id="2_5o4ho"]
 
@@ -9,4 +10,5 @@ lvl = 10
 mass = 25.0
 collision_radius = 138.0
 sprite = ExtResource("2_5o4ho")
+petal_sprite = ExtResource("1_sqomo")
 metadata/_custom_type_script = "uid://tldxv83eax52"

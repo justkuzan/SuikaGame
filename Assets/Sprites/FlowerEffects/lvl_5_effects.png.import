@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw8vbyknr5y8w"
-path="res://.godot/imported/index.icon.png-416c34f1bd75029cc5f3ac21f5e798a8.ctex"
+uid="uid://f0i0o2c3opa2"
+path="res://.godot/imported/lvl_5_effects.png-a3406a92ace865ce3ac8d21b1a4e4b5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Builds/YandexWeb/index.icon.png"
-dest_files=["res://.godot/imported/index.icon.png-416c34f1bd75029cc5f3ac21f5e798a8.ctex"]
+source_file="res://Assets/Sprites/FlowerEffects/lvl_5_effects.png"
+dest_files=["res://.godot/imported/lvl_5_effects.png-a3406a92ace865ce3ac8d21b1a4e4b5e.ctex"]
 
 [params]
 

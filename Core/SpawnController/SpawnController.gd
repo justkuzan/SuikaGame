@@ -17,6 +17,9 @@ func _ready() -> void:
 
 
 func set_new_flower_in_spawner():
+	#setup specific flower:
+	#var spawn_selection = flower_pool[9]
+	
 	var spawn_selection = spawn_selection()
 	spawner.apply_flower_data(spawn_selection)
 
@@ -36,6 +39,7 @@ func spawn_selection() -> FlowerData:
 		return flower_pool[roll]
 	else:
 		return spawn_drop_rate_calculation()
+
 	return null
 
 

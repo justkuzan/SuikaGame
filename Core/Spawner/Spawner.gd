@@ -41,10 +41,11 @@ func update_position() -> void:
 func drop_flower() -> void:
 	flower.reparent(flowers_container)
 	flower.freeze = false
-	flower.linear_velocity = Vector2(0, 150)
+	flower.linear_velocity = Vector2(0, 250)
 	flower.set_collision_mask_value(1, true)
 	flower = null
 	spawn_timer.start()
+	AudioManager.play("drop")
 
 
 func _on_spawn_timer_timeout() -> void:
