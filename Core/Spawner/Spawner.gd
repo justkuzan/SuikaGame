@@ -19,8 +19,12 @@ func _ready() -> void:
 	pass
 
 
-func _physics_process(_delta: float) -> void:
-	update_position()
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		update_position()
+	elif event is InputEventMouseButton or event is InputEventScreenTouch:
+		if event.is_pressed():
+			update_position()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -40,9 +44,10 @@ func update_position() -> void:
 
 func drop_flower() -> void:
 	flower.reparent(flowers_container)
-	flower.freeze = false
-	flower.linear_velocity = Vector2(0, 250)
 	flower.set_collision_mask_value(1, true)
+	flower.freeze = false
+	flower.linear_velocity = Vector2(0, 450)
+	#flower.apply_central_impulse(Vector2(0, 75))
 	flower = null
 	spawn_timer.start()
 	AudioManager.play("drop")

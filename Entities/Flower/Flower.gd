@@ -24,22 +24,8 @@ func _ready() -> void:
 		mass = flower_data.mass
 
 
-func _physics_process(delta: float) -> void:
-	if linear_velocity.y > 0:
-		gravity_scale = 2.0
-		linear_damp = 0.0
-	else:
-		gravity_scale = 1.0
-
-		if linear_velocity.length() < 5:
-			linear_damp = 5
-		else:
-			linear_damp = 0.5
-
-
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("flowers"):
-		if body is Flower:
-			if flower_data == body.flower_data:
-				if get_instance_id() > body.get_instance_id():
-					SignalBus.on_flower_collide.emit(self.global_position, self.flower_data, self, body)
+	if body is Flower:
+		if flower_data == body.flower_data:
+			if get_instance_id() > body.get_instance_id():
+				SignalBus.on_flower_collide.emit(self.global_position, self.flower_data, self, body)

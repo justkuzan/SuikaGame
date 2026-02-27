@@ -8,6 +8,9 @@ func setup(data: FlowerData) -> void:
 	if data.petal_sprite:
 		petal_particles.texture = data.petal_sprite
 
+	#else:
+		#print("There is no patal texture, dude!")
+
 	petal_particles.restart()
 
 
@@ -29,5 +32,4 @@ func last_lvl_setup(data: FlowerData) -> void:
 
 
 func _on_leaves_particles_finished() -> void:
-	if not petal_particles.emitting:
-		queue_free()
+	queue_free()

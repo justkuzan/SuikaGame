@@ -17,7 +17,6 @@ func _ready() -> void:
 
 
 func set_new_flower_in_spawner():
-	#setup specific flower:
 	#var spawn_selection = flower_pool[9]
 	
 	var spawn_selection = spawn_selection()

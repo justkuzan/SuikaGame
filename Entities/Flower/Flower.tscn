@@ -14,10 +14,12 @@ radius = 62.0
 [node name="Flower" type="RigidBody2D" unique_id=182945636 groups=["flowers"]]
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_hfqmi")
+gravity_scale = 2.0
 inertia = 1.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 8
+angular_damp = 1.0
 script = ExtResource("1_hfqmi")
 flower_data = ExtResource("2_cbsr3")
 

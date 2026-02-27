@@ -24,9 +24,7 @@ texture = ExtResource("2_eotdc")
 offset = Vector2(0.025, 0)
 metadata/_edit_lock_ = true
 
-[node name="Walls" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
-position = Vector2(0, -80)
-metadata/_edit_lock_ = true
+[node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
 
 [node name="Spawner" parent="." unique_id=967311033 node_paths=PackedStringArray("flowers_container", "spawn_controller") instance=ExtResource("4_xvumq")]
 flowers_container = NodePath("../FlowerContainer")
