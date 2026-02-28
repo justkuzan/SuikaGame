@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnController/SpawnController.tscn" id="7_8t823"]
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeHandler/MergeHandler.tscn" id="7_13dte"]
 [ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
+[ext_resource type="PackedScene" uid="uid://cs8lsl3mrpaaa" path="res://Core/ScoreManager/ScoreManager.tscn" id="9_4pbvs"]
 
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
@@ -40,3 +41,5 @@ flowers_container = NodePath("../FlowerContainer")
 spawner = NodePath("../Spawner")
 
 [node name="CanvasLayer" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]
+
+[node name="ScoreManager" parent="." unique_id=104208058 instance=ExtResource("9_4pbvs")]
