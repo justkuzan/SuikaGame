@@ -35,13 +35,13 @@ func handle_merge_logic(position: Vector2, data: FlowerData) -> void:
 		new_flower.global_position = position
 		flowers_container.add_child(new_flower)
 
+		AudioManager.play("merge")
 		new_flower.freeze = false
-		new_flower.linear_velocity = Vector2(0, -700)
+		new_flower.linear_velocity = Vector2(0, -1000)
 		new_flower.apply_torque_impulse(SPIN_DIRECTION.pick_random())
 
 		merge_effects.setup(data)
-		AudioManager.play("merge")
 
 	else:
-		merge_effects.last_lvl_setup(data)
 		AudioManager.play("merge")
+		merge_effects.last_lvl_setup(data)

@@ -8,9 +8,6 @@ func setup(data: FlowerData) -> void:
 	if data.petal_sprite:
 		petal_particles.texture = data.petal_sprite
 
-	#else:
-		#print("There is no patal texture, dude!")
-
 	petal_particles.restart()
 
 
