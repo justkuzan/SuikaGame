@@ -18,11 +18,10 @@ position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1532605914]
-position = Vector2(540, 960)
+position = Vector2(540, 1034)
 scale = Vector2(1.995, 1.995)
 texture = ExtResource("2_eotdc")
 offset = Vector2(0.025, 0)
-metadata/_edit_lock_ = true
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
 

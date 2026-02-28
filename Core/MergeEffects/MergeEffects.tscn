@@ -19,6 +19,7 @@ script = ExtResource("1_xqaa8")
 [node name="PetalParticles" type="CPUParticles2D" parent="." unique_id=1541622677]
 material = SubResource("CanvasItemMaterial_1qfhv")
 emitting = false
+amount = 6
 lifetime = 0.75
 one_shot = true
 explosiveness = 1.0

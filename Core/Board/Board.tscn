@@ -14,18 +14,18 @@ size = Vector2(60, 1930)
 physics_material_override = SubResource("PhysicsMaterial_0n6ah")
 
 [node name="Box" type="Sprite2D" parent="." unique_id=2013337957]
-position = Vector2(540, 1054)
-scale = Vector2(2, 2)
+position = Vector2(540, 1172)
+scale = Vector2(1.9, 1.9)
 texture = ExtResource("3_q74st")
 
 [node name="left" type="CollisionShape2D" parent="." unique_id=862982334]
-position = Vector2(-2.5, 957.20013)
+position = Vector2(29, 957.20013)
 shape = SubResource("RectangleShape2D_wor16")
 
 [node name="right" type="CollisionShape2D" parent="." unique_id=1095705318]
-position = Vector2(1085.5, 957.20013)
+position = Vector2(1052, 957.20013)
 shape = SubResource("RectangleShape2D_wor16")
 
 [node name="floor" type="CollisionShape2D" parent="." unique_id=703919177]
-position = Vector2(548, 1753)
+position = Vector2(548, 1834)
 shape = SubResource("WorldBoundaryShape2D_fw4ib")

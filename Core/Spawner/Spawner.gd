@@ -2,8 +2,8 @@ extends Node2D
 class_name Spawner
 
 const FLOWER = preload("uid://daiia8h0goc0c")
-const POS_LIM_MIN: Vector2 = Vector2(110.0, 200.0)
-const POS_LIM_MAX: Vector2 = Vector2(970.0, 200.0)
+const POS_LIM_MIN: Vector2 = Vector2(110.0, 350.0)
+const POS_LIM_MAX: Vector2 = Vector2(970.0, 350.0)
 
 @export var flowers_container: Node2D
 @export var spawn_controller: SpawnController
@@ -47,7 +47,7 @@ func drop_flower() -> void:
 	flower.reparent(flowers_container)
 	flower.set_collision_mask_value(1, true)
 	flower.freeze = false
-	flower.linear_velocity = Vector2(0, 750)
+	flower.linear_velocity = Vector2(0, 1000)
 	flower = null
 	spawn_timer.start()
 
