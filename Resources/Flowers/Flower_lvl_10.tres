@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_u12i1")
 lvl = 10
-mass = 25.0
+mass = 8.38
 collision_radius = 138.0
 sprite = ExtResource("2_5o4ho")
 petal_sprite = ExtResource("1_sqomo")

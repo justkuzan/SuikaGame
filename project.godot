@@ -13,6 +13,7 @@ config_version=5
 config/name="SuikaGame"
 run/main_scene="uid://d2682g4r85urc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=120
 boot_splash/show_image=false
 config/icon="uid://c414daqfqyq2c"
 
@@ -35,6 +36,7 @@ window/size/window_width_override=400
 window/size/window_height_override=700
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor]
 

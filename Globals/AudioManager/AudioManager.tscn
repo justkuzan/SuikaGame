@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b0c25ube4hrwc" path="res://Globals/AudioManager/AudioManager.gd" id="1_il12q"]
 [ext_resource type="AudioStream" uid="uid://rq00xufu16v5" path="res://Assets/Sounds/swosh-04.mp3" id="2_gfrt4"]
 [ext_resource type="AudioStream" uid="uid://djgkiu4rg0a38" path="res://Assets/Sounds/dragon-studio-dry-grass-rustling-478361.mp3" id="2_jhp1h"]
+[ext_resource type="AudioStream" uid="uid://cuaastmrauxg4" path="res://Assets/Sounds/background-music-elegant.ogg" id="4_oi62k"]
+[ext_resource type="AudioStream" uid="uid://f1smnyd43l2n" path="res://Assets/Sounds/background_field.ogg" id="5_ivlit"]
 
 [node name="AudioManager" type="Node" unique_id=226611794]
 script = ExtResource("1_il12q")
@@ -15,3 +17,13 @@ max_polyphony = 6
 stream = ExtResource("2_gfrt4")
 volume_db = -1.0
 max_polyphony = 3
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2122916426]
+stream = ExtResource("4_oi62k")
+volume_db = -20.0
+autoplay = true
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1595376529]
+stream = ExtResource("5_ivlit")
+volume_db = -1.0
+autoplay = true

@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_xuv68")
 lvl = 2
-mass = 0.15
+mass = 0.16
 collision_radius = 66.0
 drop_rate = 30.0
 next_level = ExtResource("1_jjobf")

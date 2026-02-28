@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_f5cal")
 lvl = 6
-mass = 1.5
+mass = 1.18
 collision_radius = 98.0
 next_level = ExtResource("1_f4oew")
 sprite = ExtResource("2_jpant")

@@ -5,8 +5,8 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hfqmi"]
 resource_local_to_scene = true
-friction = 2.0
-bounce = 0.1
+friction = 1.5
+bounce = 0.08
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbxml"]
 resource_local_to_scene = true
@@ -19,7 +19,6 @@ gravity_scale = 2.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 4
-linear_damp = 0.5
 angular_damp = 2.0
 script = ExtResource("1_hfqmi")
 flower_data = ExtResource("2_cbsr3")

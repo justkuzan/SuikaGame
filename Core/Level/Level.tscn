@@ -7,18 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/VisualEffects/VisualEffects.tscn" id="6_522nl"]
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnController/SpawnController.tscn" id="7_8t823"]
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeHandler/MergeHandler.tscn" id="7_13dte"]
+[ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
 
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
 
 [node name="VisualEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
 position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1532605914]
-position = Vector2(540, 1034)
+position = Vector2(540, 1043)
 scale = Vector2(1.995, 1.995)
 texture = ExtResource("2_eotdc")
 offset = Vector2(0.025, 0)
@@ -36,3 +38,5 @@ flowers_container = NodePath("../FlowerContainer")
 
 [node name="SpawnController" parent="." unique_id=2099989366 node_paths=PackedStringArray("spawner") instance=ExtResource("7_8t823")]
 spawner = NodePath("../Spawner")
+
+[node name="CanvasLayer" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]

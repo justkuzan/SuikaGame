@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://wt22gdfc845k"]
+
+[ext_resource type="Script" uid="uid://b5tjkq6wgnoo6" path="res://UI/InGameUi.gd" id="1_iybee"]
+
+[sub_resource type="Theme" id="Theme_c4f2p"]
+default_font_size = 48
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=392788018]
+script = ExtResource("1_iybee")
+
+[node name="InGameUI" type="Control" parent="." unique_id=2125534134]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI" unique_id=1401164672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InGameUI/MarginContainer" unique_id=846132476]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="InGameUI/MarginContainer/HBoxContainer" unique_id=1295776541]
+layout_mode = 2
+theme = SubResource("Theme_c4f2p")
+toggle_mode = true
+text = "Mute Music"
+
+[connection signal="toggled" from="InGameUI/MarginContainer/HBoxContainer/Button" to="." method="_on_button_toggled"]
