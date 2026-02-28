@@ -38,7 +38,8 @@ func handle_merge_logic(position: Vector2, data: FlowerData) -> void:
 		AudioManager.play("merge")
 		new_flower.freeze = false
 		new_flower.linear_velocity = Vector2(0, -1000)
-		new_flower.apply_torque_impulse(SPIN_DIRECTION.pick_random())
+		new_flower.angular_velocity = SPIN_DIRECTION.pick_random()
+		#new_flower.apply_torque_impulse(SPIN_DIRECTION.pick_random())
 
 		merge_effects.setup(data)
 
