@@ -64,9 +64,11 @@ func apply_flower_data(data: FlowerData) -> void:
 func spawn_flower() -> void:
 	if !flower:
 		var new_flower = FLOWER.instantiate() as Flower
+
 		new_flower.flower_data = next_flower_data
 		new_flower.position = Vector2.ZERO
 		new_flower.set_collision_mask_value(1, false)
+
 		add_child(new_flower)
 		flower = new_flower
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 	SignalBus.on_flower_collide.connect(on_flower_collide)
 
 
-func on_flower_collide(position: Vector2, data: FlowerData, flower_a: RigidBody2D, flower_b: RigidBody2D) -> void:
+func on_flower_collide(_position: Vector2, _data: FlowerData, _flower_a: RigidBody2D, _flower_b: RigidBody2D) -> void:
 	total_score += 1
 	score_label.text = "%03d" % total_score
 	score_animation()

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/VisualEffects/VisualEffects.tscn" id="6_522nl"]
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnController/SpawnController.tscn" id="7_8t823"]
-[ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeHandler/MergeHandler.tscn" id="7_13dte"]
+[ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeController/MergeController.tscn" id="7_13dte"]
 [ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
 [ext_resource type="PackedScene" uid="uid://cs8lsl3mrpaaa" path="res://Core/ScoreManager/ScoreManager.tscn" id="9_4pbvs"]
 
@@ -14,7 +14,6 @@
 script = ExtResource("1_5iy7f")
 
 [node name="VisualEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
 position = Vector2(540, 960)

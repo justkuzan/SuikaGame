@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5lemwi1ji8b1"]
+
+[ext_resource type="Script" uid="uid://diddvjifuu7vn" path="res://Core/MergeController/MergeController.gd" id="1_g8qax"]
+
+[node name="MergeController" type="Node2D" unique_id=731583569]
+script = ExtResource("1_g8qax")

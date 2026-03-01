@@ -1,18 +1,44 @@
 [gd_scene format=3 uid="uid://donyt0ner6305"]
 
+[ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="1_ndacq"]
+[ext_resource type="Texture2D" uid="uid://cyk77wl2lencl" path="res://Assets/Sprites/GeneralEffects/Noise.png" id="2_ss586"]
+
 [sub_resource type="Gradient" id="Gradient_ltjle"]
-offsets = PackedFloat32Array(0.5904059, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.1)
+offsets = PackedFloat32Array(0.7929515, 1)
+colors = PackedColorArray(0.12315822, 0.06100855, 0, 0, 0.125, 0.057724483, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ndacq"]
 gradient = SubResource("Gradient_ltjle")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
 
-[node name="VisualEffects" type="Node2D" unique_id=576478715]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ss586"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_0p565"]
+colors = PackedColorArray(1, 0.9255881, 0.6326547, 0.22200002, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yu3bc"]
+gradient = SubResource("Gradient_0p565")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.6666667, 0.4017094)
+
+[sub_resource type="Gradient" id="Gradient_ndacq"]
+offsets = PackedFloat32Array(0, 0.19730942, 0.7040359, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=200281979]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1059084224]
+visible = false
+position = Vector2(540, 1043)
+scale = Vector2(1.995, 1.995)
+texture = ExtResource("1_ndacq")
+offset = Vector2(0.025, 0)
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
+modulate = Color(1, 1, 1, 0.17500001)
 z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,3 +47,32 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_ndacq")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=111763049]
+material = SubResource("CanvasItemMaterial_ss586")
+position = Vector2(550, 1060)
+amount = 200
+texture = SubResource("GradientTexture2D_yu3bc")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1920, 1080)
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.4
+color_ramp = SubResource("Gradient_ndacq")
+
+[node name="Grain" type="TextureRect" parent="." unique_id=2124704608]
+modulate = Color(0.7578125, 0.7329468, 0.7045288, 1)
+z_index = 100
+custom_minimum_size = Vector2(8.18, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ss586")
+expand_mode = 1
+stretch_mode = 1

@@ -25,6 +25,7 @@ YandexManager="*uid://drfnt3xtnwjqk"
 
 [debug]
 
+gdscript/warnings/unused_signal=0
 shapes/avoidance/3d/obstacles_static_face_pushin_color=Color(0.95281494, 0, 0.5526029, 0.5)
 shapes/avoidance/2d/obstacles_static_face_pushin_color=Color(0.95281494, 0, 0.5526029, 0.5)
 
@@ -32,6 +33,7 @@ shapes/avoidance/2d/obstacles_static_face_pushin_color=Color(0.95281494, 0, 0.55
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
+window/size/mode=2
 window/size/window_width_override=400
 window/size/window_height_override=700
 window/stretch/mode="canvas_items"
@@ -51,6 +53,7 @@ enabled=PackedStringArray("res://addons/SimpleFormatOnSave/plugin.cfg", "res://a
 
 folder_colors={
 "res://Addons/": "gray",
+"res://Builds/": "gray",
 "res://_Builds/": "gray"
 }
 

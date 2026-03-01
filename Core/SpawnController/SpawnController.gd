@@ -19,11 +19,11 @@ func _ready() -> void:
 func set_new_flower_in_spawner():
 	#var spawn_selection = flower_pool[9]
 	
-	var spawn_selection = spawn_selection()
+	var spawn_selection = spawn_selection_flower()
 	spawner.apply_flower_data(spawn_selection)
 
 
-func spawn_selection() -> FlowerData:
+func spawn_selection_flower() -> FlowerData:
 	total_drops += 1
 	var label_total_drops = total_drops - 1
 	label.text = "%03d" % label_total_drops
@@ -39,21 +39,19 @@ func spawn_selection() -> FlowerData:
 	else:
 		return spawn_drop_rate_calculation()
 
-	return null
-
 
 func spawn_drop_rate_calculation() -> FlowerData:
 	var total_rate: float = 0.0
 
-	for i in flower_pool:
-		total_rate += i.drop_rate
+	for flower in flower_pool:
+		total_rate += flower.drop_rate
 
 	var roll: float = randf_range(0.0, total_rate)
 
-	for i in flower_pool:
-		roll -= i.drop_rate
+	for flower in flower_pool:
+		roll -= flower.drop_rate
 
 		if roll <= 0:
-			return i
+			return flower
 
-	return null
+	return flower_pool[0]

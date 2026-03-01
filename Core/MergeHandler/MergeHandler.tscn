@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://b5lemwi1ji8b1"]
-
-[ext_resource type="Script" uid="uid://diddvjifuu7vn" path="res://Core/MergeHandler/MergeHandler.gd" id="1_g8qax"]
-
-[node name="MergeHandler" type="Node2D" unique_id=731583569]
-script = ExtResource("1_g8qax")
