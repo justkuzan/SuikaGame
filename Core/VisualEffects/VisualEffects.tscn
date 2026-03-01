@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://donyt0ner6305"]
 
 [ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="1_ndacq"]
-[ext_resource type="Texture2D" uid="uid://cyk77wl2lencl" path="res://Assets/Sprites/GeneralEffects/Noise.png" id="2_ss586"]
+[ext_resource type="Shader" uid="uid://bo56g26ivkcy7" path="res://Core/VisualEffects/VisualEffects.gdshader" id="2_0p565"]
+[ext_resource type="Script" uid="uid://pbo8et5fpkp7" path="res://Core/VisualEffects/ColorRect.gd" id="3_yu3bc"]
 
 [sub_resource type="Gradient" id="Gradient_ltjle"]
 offsets = PackedFloat32Array(0.7929515, 1)
-colors = PackedColorArray(0.12315822, 0.06100855, 0, 0, 0.125, 0.057724483, 0, 1)
+colors = PackedColorArray(0.12315822, 0.06100855, 0, 0, 0.07421875, 0.038486842, 0.007827759, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ndacq"]
 gradient = SubResource("Gradient_ltjle")
@@ -28,6 +29,12 @@ fill_to = Vector2(0.6666667, 0.4017094)
 offsets = PackedFloat32Array(0, 0.19730942, 0.7040359, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4w4ca"]
+shader = ExtResource("2_0p565")
+shader_parameter/grain_amount = 0.03
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberration_amount = 1.0
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=200281979]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1059084224]
@@ -38,6 +45,7 @@ texture = ExtResource("1_ndacq")
 offset = Vector2(0.025, 0)
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
+visible = false
 modulate = Color(1, 1, 1, 0.17500001)
 z_index = 100
 anchors_preset = 15
@@ -63,16 +71,11 @@ initial_velocity_max = 10.0
 scale_amount_min = 0.4
 color_ramp = SubResource("Gradient_ndacq")
 
-[node name="Grain" type="TextureRect" parent="." unique_id=2124704608]
-modulate = Color(0.7578125, 0.7329468, 0.7045288, 1)
-z_index = 100
-custom_minimum_size = Vector2(8.18, 0)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=178524606]
+material = SubResource("ShaderMaterial_4w4ca")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_ss586")
-expand_mode = 1
-stretch_mode = 1
+script = ExtResource("3_yu3bc")
