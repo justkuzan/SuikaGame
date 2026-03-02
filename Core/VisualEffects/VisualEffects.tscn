@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://donyt0ner6305"]
 
 [ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="1_ndacq"]
-[ext_resource type="Shader" uid="uid://bo56g26ivkcy7" path="res://Core/VisualEffects/VisualEffects.gdshader" id="2_0p565"]
-[ext_resource type="Script" uid="uid://pbo8et5fpkp7" path="res://Core/VisualEffects/ColorRect.gd" id="3_yu3bc"]
 
 [sub_resource type="Gradient" id="Gradient_ltjle"]
 offsets = PackedFloat32Array(0.7929515, 1)
@@ -29,12 +27,6 @@ fill_to = Vector2(0.6666667, 0.4017094)
 offsets = PackedFloat32Array(0, 0.19730942, 0.7040359, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4w4ca"]
-shader = ExtResource("2_0p565")
-shader_parameter/grain_amount = 0.03
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/aberration_amount = 1.0
-
 [node name="CanvasLayer" type="CanvasLayer" unique_id=200281979]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1059084224]
@@ -45,7 +37,6 @@ texture = ExtResource("1_ndacq")
 offset = Vector2(0.025, 0)
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
-visible = false
 modulate = Color(1, 1, 1, 0.17500001)
 z_index = 100
 anchors_preset = 15
@@ -70,12 +61,3 @@ initial_velocity_min = 5.0
 initial_velocity_max = 10.0
 scale_amount_min = 0.4
 color_ramp = SubResource("Gradient_ndacq")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=178524606]
-material = SubResource("ShaderMaterial_4w4ca")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_yu3bc")

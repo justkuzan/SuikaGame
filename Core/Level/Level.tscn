@@ -9,6 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeController/MergeController.tscn" id="7_13dte"]
 [ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
 [ext_resource type="PackedScene" uid="uid://cs8lsl3mrpaaa" path="res://Core/ScoreManager/ScoreManager.tscn" id="9_4pbvs"]
+[ext_resource type="PackedScene" uid="uid://b3r7vl5nhfrb0" path="res://Core/DebugManager/DebugManager.tscn" id="10_s8yjo"]
+[ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="11_6o4ui"]
+[ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="12_bfaga"]
+[ext_resource type="Resource" uid="uid://7j7i336ncpib" path="res://Resources/Flowers/Flower_lvl_2.tres" id="13_uqkfl"]
+[ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="14_wfa2j"]
+[ext_resource type="Resource" uid="uid://dy00busap6wjy" path="res://Resources/Flowers/Flower_lvl_4.tres" id="15_8bs7h"]
+[ext_resource type="Resource" uid="uid://oblfcyuykp6w" path="res://Resources/Flowers/Flower_lvl_5.tres" id="16_8lug0"]
+[ext_resource type="Resource" uid="uid://bdk5khh6tn1nx" path="res://Resources/Flowers/Flower_lvl_6.tres" id="17_h7cw6"]
+[ext_resource type="Resource" uid="uid://bms40jycn86p3" path="res://Resources/Flowers/Flower_lvl_7.tres" id="18_g8yq2"]
+[ext_resource type="Resource" uid="uid://d1cw54awvjmc1" path="res://Resources/Flowers/Flower_lvl_8.tres" id="19_sm7tg"]
+[ext_resource type="Resource" uid="uid://cbroca2io0ch7" path="res://Resources/Flowers/Flower_lvl_9.tres" id="20_thhmb"]
+[ext_resource type="Resource" uid="uid://dcx17wa75bo80" path="res://Resources/Flowers/Flower_lvl_10.tres" id="21_3j116"]
 
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
@@ -42,3 +54,7 @@ spawner = NodePath("../Spawner")
 [node name="CanvasLayer" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]
 
 [node name="ScoreManager" parent="." unique_id=104208058 instance=ExtResource("9_4pbvs")]
+
+[node name="DebugManager" parent="." unique_id=459966933 instance=ExtResource("10_s8yjo")]
+visible = false
+flower_array = Array[ExtResource("11_6o4ui")]([ExtResource("12_bfaga"), ExtResource("13_uqkfl"), ExtResource("14_wfa2j"), ExtResource("15_8bs7h"), ExtResource("16_8lug0"), ExtResource("17_h7cw6"), ExtResource("18_g8yq2"), ExtResource("19_sm7tg"), ExtResource("20_thhmb"), ExtResource("21_3j116")])
