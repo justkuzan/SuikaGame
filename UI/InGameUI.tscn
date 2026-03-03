@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b5tjkq6wgnoo6" path="res://UI/InGameUi.gd" id="1_iybee"]
 
-[sub_resource type="Theme" id="Theme_c4f2p"]
-default_font_size = 48
-
 [node name="CanvasLayer" type="CanvasLayer" unique_id=392788018]
 script = ExtResource("1_iybee")
 
@@ -35,8 +32,7 @@ size_flags_vertical = 0
 
 [node name="Button" type="Button" parent="InGameUI/MarginContainer/HBoxContainer" unique_id=1295776541]
 layout_mode = 2
-theme = SubResource("Theme_c4f2p")
 toggle_mode = true
-text = "Mute Music"
+text = "Mute music"
 
 [connection signal="toggled" from="InGameUI/MarginContainer/HBoxContainer/Button" to="." method="_on_button_toggled"]
