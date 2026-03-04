@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://donyt0ner6305"]
 
-[ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="1_ndacq"]
+[ext_resource type="Texture2D" uid="uid://dy2klgcweln1r" path="res://Assets/Sprites/Backgrounds/background2560.png" id="1_0p565"]
 [ext_resource type="Shader" uid="uid://pou3rnij64aj" path="res://Shaders/base_screen_shader.gdshader" id="1_ss586"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0p565"]
 shader = ExtResource("1_ss586")
 shader_parameter/vignette_intensity = 0.2
-shader_parameter/aberration_amount = 0.001
-shader_parameter/grain_amount = 0.03
+shader_parameter/grain_amount = 0.04
 
 [sub_resource type="Gradient" id="Gradient_ltjle"]
 offsets = PackedFloat32Array(0.7929515, 1)
@@ -22,7 +21,7 @@ fill_from = Vector2(0.5, 0.5)
 blend_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_0p565"]
-colors = PackedColorArray(1, 0.9255881, 0.6326547, 0.22200002, 1, 1, 1, 0)
+colors = PackedColorArray(1, 0.9255881, 0.6326547, 0.2, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yu3bc"]
 gradient = SubResource("Gradient_0p565")
@@ -36,6 +35,13 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=200281979]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1059084224]
+visible = false
+position = Vector2(540, 1043)
+scale = Vector2(1.995, 1.995)
+texture = ExtResource("1_0p565")
+offset = Vector2(0.025, 0)
+
 [node name="Shader-ColorRect" type="ColorRect" parent="." unique_id=748702849]
 material = SubResource("ShaderMaterial_0p565")
 anchors_preset = 15
@@ -43,13 +49,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1059084224]
-visible = false
-position = Vector2(540, 1043)
-scale = Vector2(1.995, 1.995)
-texture = ExtResource("1_ndacq")
-offset = Vector2(0.025, 0)
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
 visible = false

@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://d2682g4r85urc"]
 
 [ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
-[ext_resource type="Texture2D" uid="uid://ben0qmwure1bo" path="res://Assets/Sprites/Backgrounds/enhanced_window.png" id="2_eotdc"]
+[ext_resource type="Texture2D" uid="uid://bujny6y3kjnk1" path="res://Assets/Sprites/Backgrounds/background2560_bloom.png" id="3_6o4ui"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
-[ext_resource type="Texture2D" uid="uid://dy2klgcweln1r" path="res://Assets/Sprites/Backgrounds/background2560.png" id="4_bfaga"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/VisualEffects/VisualEffects.tscn" id="6_522nl"]
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnController/SpawnController.tscn" id="7_8t823"]
@@ -32,17 +31,10 @@ script = ExtResource("1_5iy7f")
 position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1532605914]
-visible = false
-position = Vector2(540, 1043)
-scale = Vector2(1.995, 1.995)
-texture = ExtResource("2_eotdc")
-offset = Vector2(0.025, 0)
-
 [node name="Background2" type="Sprite2D" parent="." unique_id=1315821625]
 position = Vector2(540, 1043)
 scale = Vector2(1.995, 1.995)
-texture = ExtResource("4_bfaga")
+texture = ExtResource("3_6o4ui")
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
 

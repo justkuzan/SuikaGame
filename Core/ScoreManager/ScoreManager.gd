@@ -3,17 +3,15 @@ class_name ScoreManager
 
 @onready var score_label: Label = $ScoreLabel
 
-var total_score: int
 var score_tween: Tween
 
 
 func _ready() -> void:
-	SignalBus.on_flower_collide.connect(on_flower_collide)
+	GameManager.score_changed.connect(on_score_changed)
 
 
-func on_flower_collide(_position: Vector2, _data: FlowerData, _flower_a: RigidBody2D, _flower_b: RigidBody2D) -> void:
-	total_score += 1
-	score_label.text = "%03d" % total_score
+func on_score_changed(score: int) -> void:
+	score_label.text = "%03d" % score
 	score_animation()
 
 
