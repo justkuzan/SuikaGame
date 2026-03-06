@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbgwjtm3jpbr7" path="res://Core/DebugManager/DebugManager.gd" id="1_ujek7"]
 
 [sub_resource type="Theme" id="Theme_2uv33"]
-default_font_size = 32
+default_font_size = 52
 
 [node name="DebugManager" type="CanvasLayer" unique_id=459966933]
 script = ExtResource("1_ujek7")
@@ -14,60 +14,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 300
-theme_override_constants/margin_bottom = 24
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1296350788]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer" unique_id=1832509920]
+visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 0.35000002)
 
-[node name="VBoxContainerBase" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1373781758]
+[node name="HBoxContainerBase" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1871329942]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 48
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainerBase" unique_id=419462402]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainerBase" unique_id=1632878784]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Fill10" type="Button" parent="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer" unique_id=93365374]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_2uv33")
+text = "10 случ"
+alignment = 0
+
+[node name="Fill30" type="Button" parent="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer" unique_id=704600443]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_2uv33")
+text = "30 случ"
+alignment = 0
+
+[node name="Fill50" type="Button" parent="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer" unique_id=1715621517]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_2uv33")
+text = "50 случ"
+alignment = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainerBase" unique_id=1620582020]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Fill10" type="Button" parent="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer" unique_id=93365374]
+[node name="DeleteAll" type="Button" parent="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer2" unique_id=1780043868]
 layout_mode = 2
+size_flags_vertical = 0
 theme = SubResource("Theme_2uv33")
-text = "Соспаунить 10 случ"
+text = "Удалить Всё"
 alignment = 0
 
-[node name="Fill30" type="Button" parent="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer" unique_id=704600443]
-layout_mode = 2
-theme = SubResource("Theme_2uv33")
-text = "Соспаунить 30 случ"
-alignment = 0
-
-[node name="Fill50" type="Button" parent="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer" unique_id=1715621517]
-layout_mode = 2
-theme = SubResource("Theme_2uv33")
-text = "Соспаунить 50 случ"
-alignment = 0
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainerBase" unique_id=552445250]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="DeleteAll" type="Button" parent="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer2" unique_id=1780043868]
-layout_mode = 2
-theme = SubResource("Theme_2uv33")
-text = "Удалить все цветы"
-alignment = 0
-
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer/Fill10" to="." method="_on_fill_10_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer/Fill30" to="." method="_on_fill_30_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer/Fill50" to="." method="_on_fill_50_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer2/DeleteAll" to="." method="_on_delete_all_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer/Fill10" to="." method="_on_fill_10_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer/Fill30" to="." method="_on_fill_30_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer/Fill50" to="." method="_on_fill_50_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer2/DeleteAll" to="." method="_on_delete_all_pressed"]

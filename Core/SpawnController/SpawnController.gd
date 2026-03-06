@@ -9,8 +9,6 @@ class_name SpawnController
 
 var total_drops: int
 
-@onready var label: Label = $Label
-
 
 func _ready() -> void:
 	set_new_flower_in_spawner()
@@ -23,8 +21,6 @@ func set_new_flower_in_spawner():
 
 func spawn_selection_flower() -> FlowerData:
 	total_drops += 1
-	var label_total_drops = total_drops - 1
-	label.text = "%03d" % label_total_drops
 
 	if total_drops <= drops_for_lvl_1:
 		return flower_pool[0]

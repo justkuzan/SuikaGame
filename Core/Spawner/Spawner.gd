@@ -44,6 +44,7 @@ func update_position() -> void:
 
 func drop_flower() -> void:
 	AudioManager.play("drop")
+	flower.set_collision_layer_value(1, true)
 	flower.reparent(flowers_container)
 	flower.set_collision_mask_value(1, true)
 	flower.freeze = false
@@ -68,6 +69,7 @@ func spawn_flower() -> void:
 		new_flower.flower_data = next_flower_data
 		new_flower.position = Vector2.ZERO
 		new_flower.set_collision_mask_value(1, false)
+		new_flower.set_collision_layer_value(1, false)
 
 		add_child(new_flower)
 		flower = new_flower

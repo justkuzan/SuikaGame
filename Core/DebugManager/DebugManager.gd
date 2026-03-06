@@ -5,8 +5,8 @@ const FLOWER = preload("uid://daiia8h0goc0c")
 @export var flower_array: Array[FlowerData]
 @onready var flower_container: Node2D = $"../FlowerContainer"
 
-@onready var delete_all: Button = $MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer2/DeleteAll
-@onready var fill_10: Button = $MarginContainer/MarginContainer/VBoxContainerBase/VBoxContainer/Fill10
+@onready var delete_all: Button = $MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer2/DeleteAll
+@onready var fill_10: Button = $MarginContainer/MarginContainer/HBoxContainerBase/HBoxContainer/Fill10
 
 
 func _on_delete_all_pressed() -> void:
