@@ -12,7 +12,7 @@ var is_game_over: bool = false
 
 
 func _ready() -> void:
-	SignalBus.on_flower_collide.connect(on_flower_collide)
+	SignalBus.flower_collide.connect(on_flower_collide)
 
 
 func on_flower_collide(_pos, _data, _a, _b) -> void:

@@ -9,7 +9,7 @@ const SPIN_DIRECTION: Array = [-20.0, 20.0]
 
 
 func _ready() -> void:
-	SignalBus.on_flower_collide.connect(on_flower_collide)
+	SignalBus.flower_collide.connect(on_flower_collide)
 
 
 func on_flower_collide(pos: Vector2, data: FlowerData, flower_a: RigidBody2D, flower_b: RigidBody2D) -> void:

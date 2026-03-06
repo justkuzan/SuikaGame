@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2682g4r85urc"]
 
 [ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
-[ext_resource type="Texture2D" uid="uid://bujny6y3kjnk1" path="res://Assets/Sprites/Backgrounds/background2560_bloom.png" id="3_6o4ui"]
+[ext_resource type="Texture2D" uid="uid://dvxbvb12133ht" path="res://Assets/Sprites/Backgrounds/test5.png" id="3_6o4ui"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/VisualEffects/VisualEffects.tscn" id="6_522nl"]
@@ -26,14 +26,15 @@
 script = ExtResource("1_5iy7f")
 
 [node name="VisualEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
 position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="Sprite2D" parent="." unique_id=1315821625]
-position = Vector2(540, 1043)
-scale = Vector2(1.995, 1.995)
+[node name="Background" type="Sprite2D" parent="." unique_id=1315821625]
+position = Vector2(589, 1043)
+scale = Vector2(3.17, 3.17)
 texture = ExtResource("3_6o4ui")
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
