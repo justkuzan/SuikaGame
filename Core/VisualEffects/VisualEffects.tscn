@@ -1,21 +1,6 @@
 [gd_scene format=3 uid="uid://donyt0ner6305"]
 
 [ext_resource type="Texture2D" uid="uid://dvxbvb12133ht" path="res://Assets/Sprites/Backgrounds/test5.png" id="1_0p565"]
-[ext_resource type="Shader" uid="uid://pou3rnij64aj" path="res://Shaders/base_screen_shader.gdshader" id="1_ss586"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0p565"]
-shader = ExtResource("1_ss586")
-shader_parameter/vignette_intensity = 0.2
-shader_parameter/grain_amount = 0.04
-
-[sub_resource type="Gradient" id="Gradient_ltjle"]
-offsets = PackedFloat32Array(0.7929515, 1)
-colors = PackedColorArray(0.12315822, 0.06100855, 0, 0, 0.07421875, 0.038486842, 0.007827759, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndacq"]
-gradient = SubResource("Gradient_ltjle")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ss586"]
 blend_mode = 1
@@ -27,11 +12,21 @@ colors = PackedColorArray(1, 0.9255881, 0.6326547, 0.2, 1, 1, 1, 0)
 gradient = SubResource("Gradient_0p565")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.6666667, 0.4017094)
+fill_to = Vector2(0.6111111, 0.43589744)
 
 [sub_resource type="Gradient" id="Gradient_ndacq"]
 offsets = PackedFloat32Array(0, 0.19730942, 0.7040359, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Environment" id="Environment_ss586"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.15
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.05
+adjustment_saturation = 1.05
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=200281979]
 
@@ -41,26 +36,6 @@ position = Vector2(540, 1043)
 scale = Vector2(1.995, 1.995)
 texture = ExtResource("1_0p565")
 offset = Vector2(0.025, 0)
-
-[node name="Shader-ColorRect" type="ColorRect" parent="." unique_id=748702849]
-material = SubResource("ShaderMaterial_0p565")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Gradient" type="TextureRect" parent="." unique_id=1340849953]
-visible = false
-modulate = Color(1, 1, 1, 0.17500001)
-z_index = 100
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_ndacq")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=111763049]
 material = SubResource("CanvasItemMaterial_ss586")
@@ -72,7 +47,15 @@ emission_shape = 3
 emission_rect_extents = Vector2(1920, 1080)
 direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 10.0
-scale_amount_min = 0.4
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+radial_accel_min = -1.0
+radial_accel_max = 1.0
+tangential_accel_min = -1.0
+tangential_accel_max = 1.0
+scale_amount_min = 0.2
+scale_amount_max = 1.2
 color_ramp = SubResource("Gradient_ndacq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1016160349]
+environment = SubResource("Environment_ss586")

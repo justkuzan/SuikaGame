@@ -12,18 +12,22 @@ script = ExtResource("1_il12q")
 [node name="Merge" type="AudioStreamPlayer" parent="." unique_id=1099357363]
 stream = ExtResource("2_jhp1h")
 max_polyphony = 6
+bus = &"Effects"
 
 [node name="Drop" type="AudioStreamPlayer" parent="." unique_id=42625803]
 stream = ExtResource("2_gfrt4")
 volume_db = -1.0
 max_polyphony = 3
+bus = &"Effects"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2122916426]
 stream = ExtResource("4_oi62k")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1595376529]
 stream = ExtResource("5_ivlit")
 volume_db = -1.0
 autoplay = true
+bus = &"Effects"
