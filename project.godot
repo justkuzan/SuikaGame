@@ -17,6 +17,10 @@ run/max_fps=60
 boot_splash/show_image=false
 config/icon="uid://c414daqfqyq2c"
 
+[audio]
+
+buses/default_bus_layout="uid://cqadrvtgfogr7"
+
 [autoload]
 
 SignalBus="*uid://5wkgn732bie"
