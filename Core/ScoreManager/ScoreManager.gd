@@ -1,9 +1,9 @@
 extends Node2D
 class_name ScoreManager
 
-@onready var score_label: Label = $ScoreLabel
-
 var score_tween: Tween
+
+@onready var score_label: Label = $ScoreLabel
 
 
 func _ready() -> void:

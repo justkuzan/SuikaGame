@@ -4,9 +4,3 @@
 
 [node name="MergeController" type="Node2D" unique_id=731583569]
 script = ExtResource("1_g8qax")
-
-[node name="MergeQueue-Timer" type="Timer" parent="." unique_id=1130510925]
-wait_time = 0.05
-one_shot = true
-
-[connection signal="timeout" from="MergeQueue-Timer" to="." method="_on_merge_queue_timer_timeout"]

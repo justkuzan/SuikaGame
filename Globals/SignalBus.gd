@@ -8,3 +8,7 @@ signal flower_collide(
 	)
 
 signal debug_mode_changed(bool)
+
+signal flower_merged(pos: Vector2, lvl: int)
+
+signal combo_updated(pos: Vector2, count: int)

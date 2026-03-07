@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dy77c5fvl7uvv"]
+
+[ext_resource type="Script" uid="uid://dackvt7rgd7dy" path="res://Core/ComboManager/ComboManager.gd" id="1_gs8m6"]
+
+[node name="ComboManager" type="Node" unique_id=597900910]
+script = ExtResource("1_gs8m6")
+
+[node name="ComboTimer" type="Timer" parent="." unique_id=1692104377]
+one_shot = true
+
+[connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
