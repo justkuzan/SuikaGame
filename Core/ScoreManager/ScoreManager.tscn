@@ -1,23 +1,18 @@
 [gd_scene format=3 uid="uid://cs8lsl3mrpaaa"]
 
 [ext_resource type="Script" uid="uid://sry1q76w2j2" path="res://Core/ScoreManager/ScoreManager.gd" id="1_g81cd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_tfatk"]
-font_size = 100
-outline_size = 29
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="2_e4ol4"]
+[ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="3_06ncg"]
+[ext_resource type="Resource" uid="uid://7j7i336ncpib" path="res://Resources/Flowers/Flower_lvl_2.tres" id="4_7cjc6"]
+[ext_resource type="Resource" uid="uid://sk5wxi5lwv25" path="res://Resources/Flowers/Flower_lvl_3.tres" id="5_mt6ej"]
+[ext_resource type="Resource" uid="uid://dy00busap6wjy" path="res://Resources/Flowers/Flower_lvl_4.tres" id="6_ik4s3"]
+[ext_resource type="Resource" uid="uid://oblfcyuykp6w" path="res://Resources/Flowers/Flower_lvl_5.tres" id="7_4nuwr"]
+[ext_resource type="Resource" uid="uid://bdk5khh6tn1nx" path="res://Resources/Flowers/Flower_lvl_6.tres" id="8_3bjp8"]
+[ext_resource type="Resource" uid="uid://bms40jycn86p3" path="res://Resources/Flowers/Flower_lvl_7.tres" id="9_1x8qf"]
+[ext_resource type="Resource" uid="uid://d1cw54awvjmc1" path="res://Resources/Flowers/Flower_lvl_8.tres" id="10_3f05r"]
+[ext_resource type="Resource" uid="uid://cbroca2io0ch7" path="res://Resources/Flowers/Flower_lvl_9.tres" id="11_5jq0f"]
+[ext_resource type="Resource" uid="uid://dcx17wa75bo80" path="res://Resources/Flowers/Flower_lvl_10.tres" id="12_5k68k"]
 
 [node name="ScoreManager" type="Node2D" unique_id=104208058]
 script = ExtResource("1_g81cd")
-
-[node name="ScoreLabel" type="Label" parent="." unique_id=1972545714]
-offset_left = 476.0
-offset_top = 16.0
-offset_right = 648.0
-offset_bottom = 153.0
-pivot_offset = Vector2(86, 68)
-size_flags_horizontal = 4
-text = "000"
-label_settings = SubResource("LabelSettings_tfatk")
-horizontal_alignment = 1
-vertical_alignment = 1
+flower_resources = Array[ExtResource("2_e4ol4")]([ExtResource("3_06ncg"), ExtResource("4_7cjc6"), ExtResource("5_mt6ej"), ExtResource("6_ik4s3"), ExtResource("7_4nuwr"), ExtResource("8_3bjp8"), ExtResource("9_1x8qf"), ExtResource("10_3f05r"), ExtResource("11_5jq0f"), ExtResource("12_5k68k")])

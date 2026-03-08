@@ -1,5 +1,5 @@
 extends Node2D
-class_name MergeController
+class_name MergeManager
 
 const FLOWER = preload("uid://daiia8h0goc0c")
 const MERGE_EFFECTS = preload("uid://dvk3rdpl0y03s")
@@ -42,10 +42,10 @@ func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
 
 		merge_effects.setup(data)
 
-		SignalBus.flower_merged.emit(pos, data.level)
+		SignalBus.flower_merged.emit(pos, data.lvl)
 
 	else:
 		AudioManager.play("merge")
 		merge_effects.last_lvl_setup(data)
 
-		SignalBus.flower_merged.emit(pos, data.level)
+		SignalBus.flower_merged.emit(pos, data.lvl)

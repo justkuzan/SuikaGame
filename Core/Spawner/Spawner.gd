@@ -6,7 +6,7 @@ const POS_LIM_MIN: Vector2 = Vector2(110.0, 350.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 350.0)
 
 @export var flowers_container: Node2D
-@export var spawn_controller: SpawnController
+@export var spawn_controller: SpawnManager
 
 var flower: Flower = null
 var next_flower_data: FlowerData

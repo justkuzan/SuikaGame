@@ -1,5 +1,5 @@
 extends Node2D
-class_name SpawnController
+class_name SpawnManager
 
 @export var drops_for_lvl_1: int
 @export var drops_for_lvl_2: int

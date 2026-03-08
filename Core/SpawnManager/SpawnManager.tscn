@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkjnqum5em45w"]
 
-[ext_resource type="Script" uid="uid://vq04k5wgtg80" path="res://Core/SpawnController/SpawnController.gd" id="1_c1yio"]
+[ext_resource type="Script" uid="uid://vq04k5wgtg80" path="res://Core/SpawnManager/SpawnManager.gd" id="1_c1yio"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="2_abskx"]
 [ext_resource type="Resource" uid="uid://duwmj0id11a0v" path="res://Resources/Flowers/Flower_lvl_1.tres" id="3_ojfr3"]
 [ext_resource type="Resource" uid="uid://7j7i336ncpib" path="res://Resources/Flowers/Flower_lvl_2.tres" id="4_nh202"]
@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://cbroca2io0ch7" path="res://Resources/Flowers/Flower_lvl_9.tres" id="11_mbblf"]
 [ext_resource type="Resource" uid="uid://dcx17wa75bo80" path="res://Resources/Flowers/Flower_lvl_10.tres" id="12_60oe2"]
 
-[node name="SpawnController" type="Node2D" unique_id=2099989366]
+[node name="SpawnManager" type="Node2D" unique_id=2099989366]
 script = ExtResource("1_c1yio")
 drops_for_lvl_1 = 3
 drops_for_lvl_2 = 7
