@@ -1,4 +1,5 @@
 extends Node
+class_name ComboManager
 
 var combo_counter: int = 0
 var combo_multiplier: int = 1
@@ -10,7 +11,7 @@ func _ready() -> void:
 	SignalBus.flower_merged.connect(on_flower_merged)
 
 
-func on_flower_merged(pos: Vector2, lvl: int) -> void:
+func on_flower_merged(_pos: Vector2, _lvl: int) -> void:
 	if combo_timer.is_stopped():
 		combo_counter = 1
 	else:
@@ -18,13 +19,13 @@ func on_flower_merged(pos: Vector2, lvl: int) -> void:
 
 	update_multiplier()
 	combo_timer.start()
-	SignalBus.combo_updated.emit(pos, combo_counter)
+	SignalBus.combo_updated.emit(_pos, combo_counter, combo_multiplier)
 
 
 func _on_combo_timer_timeout() -> void:
 	combo_counter = 0
 	combo_multiplier = 1
-	SignalBus.combo_updated.emit(Vector2(), combo_counter)
+	SignalBus.combo_updated.emit(Vector2(), combo_counter, combo_multiplier)
 
 
 func update_multiplier() -> void:

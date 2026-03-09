@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://daihv2sgntk7q" path="res://Core/Spawner/Spawner.gd" id="1_4riai"]
 
 [sub_resource type="Gradient" id="Gradient_xgoj3"]
-offsets = PackedFloat32Array(0.55421686, 1)
+offsets = PackedFloat32Array(0.4368231, 1)
 colors = PackedColorArray(1, 1, 1, 0.35000002, 1, 1, 1, 0.05)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w6knh"]
@@ -19,9 +19,8 @@ wait_time = 0.75
 one_shot = true
 
 [node name="GuideStripe" type="Sprite2D" parent="." unique_id=1527332510]
-visible = false
-position = Vector2(0, 791)
-scale = Vector2(0.8, 24)
+position = Vector2(0, 725.5)
+scale = Vector2(0.8, 21.953125)
 texture = SubResource("GradientTexture2D_w6knh")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

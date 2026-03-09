@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2682g4r85urc"]
 
 [ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
-[ext_resource type="Texture2D" uid="uid://dvxbvb12133ht" path="res://Assets/Sprites/Backgrounds/test5.png" id="3_6o4ui"]
+[ext_resource type="Texture2D" uid="uid://x6g0assjske" path="res://Assets/Sprites/Backgrounds/photo_2026-03-09_12-14-57.jpg" id="3_6o4ui"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/WorldEffects/WorldEffects.tscn" id="6_522nl"]
@@ -25,14 +25,12 @@
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
 
-[node name="VisualEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1360190577]
 position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1315821625]
-position = Vector2(589, 1043)
+position = Vector2(589, 915)
 scale = Vector2(3.17, 3.17)
 texture = ExtResource("3_6o4ui")
 
@@ -53,6 +51,8 @@ spawner = NodePath("../Spawner")
 [node name="CanvasLayer" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]
 
 [node name="ScoreManager" parent="." unique_id=104208058 instance=ExtResource("9_4pbvs")]
+
+[node name="WorldEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
 
 [node name="DebugManager" parent="." unique_id=459966933 instance=ExtResource("10_s8yjo")]
 visible = false
