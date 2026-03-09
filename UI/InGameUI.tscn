@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://wt22gdfc845k"]
 
 [ext_resource type="Script" uid="uid://b5tjkq6wgnoo6" path="res://UI/InGameUi.gd" id="1_iybee"]
+[ext_resource type="Texture2D" uid="uid://bqi1yu8iwr86w" path="res://Assets/Sprites/TestObjects/button-placeholder.png" id="2_v4w3m"]
+[ext_resource type="Texture2D" uid="uid://dspo1dek3tcm8" path="res://Assets/Sprites/TestObjects/icon-placeholder.png" id="3_fpkuk"]
+[ext_resource type="FontFile" uid="uid://cacm4b36c5c5a" path="res://Assets/Fonts/Pacifico-Regular.ttf" id="4_slqm7"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=392788018]
+[sub_resource type="LabelSettings" id="LabelSettings_yoa8l"]
+font = ExtResource("4_slqm7")
+font_size = 56
+
+[node name="InGameUI" type="CanvasLayer" unique_id=392788018]
 script = ExtResource("1_iybee")
 
 [node name="InGameUI" type="Control" parent="." unique_id=2125534134]
@@ -14,26 +21,105 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="InGameUI" unique_id=1401164672]
+[node name="General-Margin" type="MarginContainer" parent="InGameUI" unique_id=1401164672]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.0
+offset_right = 540.0
+offset_bottom = 188.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InGameUI/MarginContainer" unique_id=846132476]
+[node name="Top-HBox" type="HBoxContainer" parent="InGameUI/General-Margin" unique_id=846132476]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Button" type="Button" parent="InGameUI/MarginContainer/HBoxContainer" unique_id=1295776541]
-visible = false
+[node name="LeftButtons-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=1312850403]
 layout_mode = 2
-toggle_mode = true
-text = "Mute music"
+theme_override_constants/separation = 20
 
-[connection signal="toggled" from="InGameUI/MarginContainer/HBoxContainer/Button" to="." method="_on_button_toggled"]
+[node name="Menu-TextureButton" type="TextureButton" parent="InGameUI/General-Margin/Top-HBox/LeftButtons-VBox" unique_id=1552402156]
+layout_mode = 2
+texture_normal = ExtResource("2_v4w3m")
+
+[node name="SoundOff-TextureButton" type="TextureButton" parent="InGameUI/General-Margin/Top-HBox/LeftButtons-VBox" unique_id=693055671]
+layout_mode = 2
+texture_normal = ExtResource("2_v4w3m")
+
+[node name="Empty" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=1965676137]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterCounters-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=335160967]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Counter-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox" unique_id=288157892]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="CounterBg-Panel" type="Panel" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Counter-Margin" unique_id=315065840]
+layout_mode = 2
+
+[node name="Counter-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Counter-Margin" unique_id=1198849235]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Counter-Margin/Counter-HBox" unique_id=331346275]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_fpkuk")
+stretch_mode = 2
+
+[node name="Counter-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Counter-Margin/Counter-HBox" unique_id=63904488]
+layout_mode = 2
+size_flags_vertical = 0
+text = "23 541"
+label_settings = SubResource("LabelSettings_yoa8l")
+
+[node name="Coins-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox" unique_id=296882636]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="CoinsBg-Panel" type="Panel" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Coins-Margin" unique_id=991110207]
+layout_mode = 2
+
+[node name="Coins-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Coins-Margin" unique_id=1196540390]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Coins-Margin/Coins-HBox" unique_id=676708168]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_fpkuk")
+stretch_mode = 2
+
+[node name="Coins-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-HBox/Coins-Margin/Coins-HBox" unique_id=1771735135]
+layout_mode = 2
+size_flags_vertical = 0
+text = "849"
+label_settings = SubResource("LabelSettings_yoa8l")
+
+[node name="Empty2" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=781786151]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightButtons-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=1366916761]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 20
+
+[node name="Booster1-TextureButton" type="TextureButton" parent="InGameUI/General-Margin/Top-HBox/RightButtons-VBox" unique_id=1328581110]
+layout_mode = 2
+texture_normal = ExtResource("2_v4w3m")
+
+[node name="Booster2-TextureButton" type="TextureButton" parent="InGameUI/General-Margin/Top-HBox/RightButtons-VBox" unique_id=757628140]
+layout_mode = 2
+texture_normal = ExtResource("2_v4w3m")

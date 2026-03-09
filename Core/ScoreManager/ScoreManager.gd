@@ -3,7 +3,7 @@ class_name ScoreManager
 
 @export var flower_resources: Array[FlowerData] = []
 
-#var combo_multiplier: int = 1
+var combo_multiplier: int = 1
 
 #var score_tween: Tween
 
@@ -27,8 +27,8 @@ func on_flower_merged(_pos: Vector2, lvl: int) -> void:
 	SignalBus.coins_changed.emit(GameManager.total_coins)
 
 
-func on_combo_updated(_pos: Vector2, combo_count: int, combo_multiplier: int) -> void:
-	combo_multiplier = count
+func on_combo_updated(_pos: Vector2, _combo_count: int, new_combo_multiplier: int) -> void:
+	combo_multiplier = new_combo_multiplier
 
 
 #func score_animation() -> void:

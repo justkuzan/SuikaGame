@@ -48,11 +48,11 @@ flowers_container = NodePath("../FlowerContainer")
 [node name="SpawnController" parent="." unique_id=2099989366 node_paths=PackedStringArray("spawner") instance=ExtResource("7_8t823")]
 spawner = NodePath("../Spawner")
 
-[node name="CanvasLayer" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]
-
 [node name="ScoreManager" parent="." unique_id=104208058 instance=ExtResource("9_4pbvs")]
 
 [node name="WorldEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
+
+[node name="InGameUI" parent="." unique_id=392788018 instance=ExtResource("8_8t823")]
 
 [node name="DebugManager" parent="." unique_id=459966933 instance=ExtResource("10_s8yjo")]
 visible = false
