@@ -17,10 +17,3 @@ class_name FlowerData
 @export var next_level: FlowerData
 @export var sprite: Texture2D
 @export var petal_sprite: Texture2D
-
-#Flowers drop percentage table:
-#1 lvl - 40
-#2 lvl - 30
-#3 lvl - 20
-#4 lvl - 10
-#5 lvl - 3

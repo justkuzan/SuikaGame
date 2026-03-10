@@ -8,6 +8,8 @@
 [resource]
 script = ExtResource("1_1h4e2")
 lvl = 3
+score_value = 30
+coin_value = 3
 mass = 0.27
 collision_radius = 75.0
 drop_rate = 20.0

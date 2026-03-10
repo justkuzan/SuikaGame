@@ -8,6 +8,8 @@
 [resource]
 script = ExtResource("1_hpuk5")
 lvl = 4
+score_value = 40
+coin_value = 4
 mass = 0.44
 collision_radius = 80.0
 drop_rate = 10.0

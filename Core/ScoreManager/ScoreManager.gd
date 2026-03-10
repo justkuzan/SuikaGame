@@ -5,8 +5,6 @@ class_name ScoreManager
 
 var combo_multiplier: int = 1
 
-#var score_tween: Tween
-
 
 func _ready() -> void:
 	SignalBus.flower_merged.connect(on_flower_merged)
@@ -29,16 +27,3 @@ func on_flower_merged(_pos: Vector2, lvl: int) -> void:
 
 func on_combo_updated(_pos: Vector2, _combo_count: int, new_combo_multiplier: int) -> void:
 	combo_multiplier = new_combo_multiplier
-
-
-#func score_animation() -> void:
-	#if score_tween:
-		#score_tween.kill()
-#
-	#$ScoreLabel.scale = Vector2.ONE
-#
-	#score_tween = get_tree().create_tween()
-	#score_tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-#
-	#score_tween.tween_property($ScoreLabel, "scale", Vector2(1.25, 1.25), 0.2)
-	#score_tween.tween_property($ScoreLabel, "scale", Vector2.ONE, 0.2)
