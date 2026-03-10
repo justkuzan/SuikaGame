@@ -69,6 +69,10 @@ folder_colors={
 
 flowers=""
 
+[gui]
+
+theme/custom_font="uid://cacm4b36c5c5a"
+
 [input]
 
 drop={
