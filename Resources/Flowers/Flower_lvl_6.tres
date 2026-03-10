@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource("1_f5cal")
 lvl = 6
-score_value = 60
-coin_value = 6
+score_value = 50
+coin_value = 5
 mass = 1.18
 collision_radius = 98.0
 next_level = ExtResource("1_f4oew")
