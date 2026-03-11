@@ -9,7 +9,7 @@
 font = ExtResource("2_ml06o")
 font_size = 72
 outline_size = 16
-outline_color = Color(0.4117647, 0.3254902, 0.28627452, 1)
+outline_color = Color(0.375, 0.34780884, 0.33544922, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oyyt3"]
 font = ExtResource("2_ml06o")
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 72
+theme_override_constants/separation = 50
 
 [node name="Counter" type="HBoxContainer" parent="Counter+Coins-HBox" unique_id=1498751458]
 layout_mode = 2
@@ -52,6 +52,7 @@ size_flags_horizontal = 3
 theme_override_constants/margin_top = -14
 
 [node name="ScorePopUp-Label" type="Label" parent="Counter+Coins-HBox/Counter/Counter-VBox/Negative-Margin" unique_id=562831680]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "+25"
@@ -70,7 +71,7 @@ texture = ExtResource("1_uwyfe")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 12
+theme_override_constants/separation = 6
 
 [node name="Counter-VBox" type="VBoxContainer" parent="Counter+Coins-HBox/Coins" unique_id=1130229625]
 layout_mode = 2
@@ -83,6 +84,7 @@ size_flags_horizontal = 3
 theme_override_constants/margin_top = -14
 
 [node name="CoinsPopUp-Label" type="Label" parent="Counter+Coins-HBox/Coins/Counter-VBox/Negative-Margin" unique_id=1241819676]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "+4"

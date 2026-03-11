@@ -62,3 +62,5 @@ func merge_pop_up_setup(pos, data) -> void:
 	var merge_pop_up = MERGE_POP_UP.instantiate() as MergePopUp
 	pop_up_container.add_child(merge_pop_up)
 	merge_pop_up.global_position = pos
+
+	merge_pop_up.setup(data.score_value, data.coin_value)
