@@ -3,9 +3,12 @@ class_name MergeManager
 
 const FLOWER = preload("uid://daiia8h0goc0c")
 const MERGE_EFFECTS = preload("uid://dvk3rdpl0y03s")
+const MERGE_POP_UP = preload("uid://sbokrpi4fox3")
 const SPIN_DIRECTION: Array = [-20.0, 20.0]
 
 @export var flowers_container: Node2D
+
+@onready var pop_up_container: Node2D = %PopUpContainer
 
 
 func _ready() -> void:
@@ -43,13 +46,19 @@ func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
 		new_flower.angular_velocity = SPIN_DIRECTION.pick_random()
 
 		merge_effects.setup(data)
-		merge_effects.merge_pop_up_setup(data)
+		merge_pop_up_setup(pos, data)
 
 		SignalBus.flower_merged.emit(pos, data.lvl)
 
 	else:
 		AudioManager.play("merge")
 		merge_effects.last_lvl_setup(data)
-		merge_effects.merge_pop_up_setup(data)
+		merge_pop_up_setup(pos, data)
 
 		SignalBus.flower_merged.emit(pos, data.lvl)
+
+
+func merge_pop_up_setup(pos, data) -> void:
+	var merge_pop_up = MERGE_POP_UP.instantiate() as MergePopUp
+	pop_up_container.add_child(merge_pop_up)
+	merge_pop_up.global_position = pos
