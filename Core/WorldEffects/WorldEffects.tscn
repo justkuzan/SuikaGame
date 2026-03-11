@@ -29,6 +29,7 @@ adjustment_saturation = 1.05
 [node name="WorldEffects" type="CanvasLayer" unique_id=200281979]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=111763049]
+visible = false
 material = SubResource("CanvasItemMaterial_ss586")
 position = Vector2(550, 1060)
 amount = 200

@@ -10,6 +10,8 @@ const SPIN_DIRECTION: Array = [-20.0, 20.0]
 
 func _ready() -> void:
 	SignalBus.flower_collide.connect(on_flower_collide)
+	var warmer = MERGE_EFFECTS.instantiate()
+	warmer.queue_free()
 
 
 func on_flower_collide(pos: Vector2, data: FlowerData, flower_a: RigidBody2D, flower_b: RigidBody2D) -> void:
@@ -41,11 +43,13 @@ func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
 		new_flower.angular_velocity = SPIN_DIRECTION.pick_random()
 
 		merge_effects.setup(data)
+		merge_effects.merge_pop_up_setup(data)
 
 		SignalBus.flower_merged.emit(pos, data.lvl)
 
 	else:
 		AudioManager.play("merge")
 		merge_effects.last_lvl_setup(data)
+		merge_effects.merge_pop_up_setup(data)
 
 		SignalBus.flower_merged.emit(pos, data.lvl)

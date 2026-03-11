@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnManager/SpawnManager.tscn" id="7_8t823"]
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeManager/MergeManager.tscn" id="7_13dte"]
 [ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
+[ext_resource type="PackedScene" uid="uid://dvk3rdpl0y03s" path="res://Core/MergeEffects/MergeEffects.tscn" id="8_bfaga"]
 [ext_resource type="PackedScene" uid="uid://cs8lsl3mrpaaa" path="res://Core/ScoreManager/ScoreManager.tscn" id="9_4pbvs"]
 [ext_resource type="PackedScene" uid="uid://b3r7vl5nhfrb0" path="res://Core/DebugManager/DebugManager.tscn" id="10_s8yjo"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="11_6o4ui"]
@@ -49,6 +50,8 @@ flowers_container = NodePath("../FlowerContainer")
 spawner = NodePath("../Spawner")
 
 [node name="ScoreManager" parent="." unique_id=104208058 instance=ExtResource("9_4pbvs")]
+
+[node name="MergeEffects" parent="." unique_id=658350261 instance=ExtResource("8_bfaga")]
 
 [node name="WorldEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
 

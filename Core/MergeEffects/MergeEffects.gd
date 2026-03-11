@@ -1,6 +1,8 @@
 extends Node2D
 class_name MergeEffects
 
+const MERGE_POP_UP = preload("uid://sbokrpi4fox3")
+
 @onready var petal_particles: CPUParticles2D = $PetalParticles
 
 
@@ -30,3 +32,9 @@ func last_lvl_setup(data: FlowerData) -> void:
 
 func _on_leaves_particles_finished() -> void:
 	queue_free()
+
+
+func merge_pop_up_setup(data: FlowerData) -> void:
+	var merge_pop_up = MERGE_POP_UP.instantiate() as MergePopUp
+	add_child(merge_pop_up)
+	#merge_pop_up.global_position = global_position

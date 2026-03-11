@@ -9,7 +9,7 @@ signal flower_collide(
 
 signal debug_mode_changed(bool)
 
-signal flower_merged(pos: Vector2, lvl: int)
+signal flower_merged(pos: Vector2, lvl: int, score: int, coins: int)
 
 signal score_changed(value)
 

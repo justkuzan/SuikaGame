@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://sbokrpi4fox3"]
+
+[ext_resource type="Script" uid="uid://bprpqa788p31t" path="res://Core/MergePopUp/MergePopUp.gd" id="1_ml06o"]
+[ext_resource type="Texture2D" uid="uid://df0n7sfefdnl" path="res://UI/Icons/icon-flower.png" id="1_uwyfe"]
+[ext_resource type="FontFile" uid="uid://cacm4b36c5c5a" path="res://Assets/Fonts/Pacifico-Regular.ttf" id="2_ml06o"]
+[ext_resource type="Texture2D" uid="uid://cefsrc7dr4qlx" path="res://UI/Icons/icon-coin.png" id="3_gbws5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lq5jn"]
+font = ExtResource("2_ml06o")
+font_size = 72
+outline_size = 16
+outline_color = Color(0.4117647, 0.3254902, 0.28627452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oyyt3"]
+font = ExtResource("2_ml06o")
+font_size = 72
+font_color = Color(1, 0.6745098, 0.2, 1)
+outline_size = 10
+outline_color = Color(0.3515625, 0.26172638, 0.13595581, 1)
+
+[node name="MergePopUp" type="Node2D" unique_id=630514629]
+z_index = 500
+script = ExtResource("1_ml06o")
+
+[node name="Counter+Coins-HBox" type="HBoxContainer" parent="." unique_id=159274699]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -49.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 72
+
+[node name="Counter" type="HBoxContainer" parent="Counter+Coins-HBox" unique_id=1498751458]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Counter-VBox" type="VBoxContainer" parent="Counter+Coins-HBox/Counter" unique_id=723166657]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Negative-Margin" type="MarginContainer" parent="Counter+Coins-HBox/Counter/Counter-VBox" unique_id=1797536570]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = -14
+
+[node name="ScorePopUp-Label" type="Label" parent="Counter+Coins-HBox/Counter/Counter-VBox/Negative-Margin" unique_id=562831680]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "+25"
+label_settings = SubResource("LabelSettings_lq5jn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon-TextureRect" type="TextureRect" parent="Counter+Coins-HBox/Counter" unique_id=1984249113]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_uwyfe")
+
+[node name="Coins" type="HBoxContainer" parent="Counter+Coins-HBox" unique_id=378769903]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Counter-VBox" type="VBoxContainer" parent="Counter+Coins-HBox/Coins" unique_id=1130229625]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Negative-Margin" type="MarginContainer" parent="Counter+Coins-HBox/Coins/Counter-VBox" unique_id=1222834171]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = -14
+
+[node name="CoinsPopUp-Label" type="Label" parent="Counter+Coins-HBox/Coins/Counter-VBox/Negative-Margin" unique_id=1241819676]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "+4"
+label_settings = SubResource("LabelSettings_oyyt3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon-TextureRect" type="TextureRect" parent="Counter+Coins-HBox/Coins" unique_id=210967650]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_gbws5")

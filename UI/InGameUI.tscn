@@ -28,10 +28,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -540.0
 offset_right = 540.0
-offset_bottom = 188.0
+offset_bottom = 252.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
+theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 20
 
@@ -104,9 +104,11 @@ theme_override_constants/margin_top = -14
 [node name="Counter-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=63904488]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 text = "23 547"
 label_settings = ExtResource("5_qabgy")
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Coins-Margin2" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox" unique_id=572598831]
 layout_mode = 2
@@ -150,9 +152,11 @@ theme_override_constants/margin_top = -14
 [node name="Coins-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=873039949]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 text = "23 547"
 label_settings = ExtResource("5_qabgy")
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Empty2" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=781786151]
 layout_mode = 2
