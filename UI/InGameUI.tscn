@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://df0n7sfefdnl" path="res://UI/Icons/icon-flower.png" id="4_yoa8l"]
 [ext_resource type="LabelSettings" uid="uid://d1tvowrbxeyyf" path="res://Resources/Fonts/Pacifico-64-Brown.tres" id="5_qabgy"]
 [ext_resource type="Theme" uid="uid://4g8icp11ewv5" path="res://UI/ButtonThemes/IconButton/icon-button-theme.tres" id="7_qabgy"]
-[ext_resource type="Texture2D" uid="uid://cefsrc7dr4qlx" path="res://UI/Icons/icon-coin.png" id="8_2wdwc"]
 [ext_resource type="Texture2D" uid="uid://bjajpom0rr50s" path="res://UI/Icons/icon-sound.png" id="8_51tg6"]
+[ext_resource type="Texture2D" uid="uid://0q6qdy18arx2" path="res://UI/Icons/icon-coin-small.png" id="8_xh7uu"]
+[ext_resource type="Texture2D" uid="uid://chh1hblnntwc4" path="res://UI/ButtonThemes/IconButton/icon_booster1-default.png" id="9_2wdwc"]
+[ext_resource type="Texture2D" uid="uid://bqva0fgci3tyd" path="res://UI/ButtonThemes/IconButton/icon_booster1-pressed.png" id="10_3tcqs"]
+[ext_resource type="Texture2D" uid="uid://bfybu0ksdjg4q" path="res://UI/ButtonThemes/IconButton/icon_booster2-default.png" id="10_qqjn3"]
+[ext_resource type="Texture2D" uid="uid://cjedtsko2frr1" path="res://UI/ButtonThemes/IconButton/icon_booster1-hover.png" id="11_8sg4q"]
+[ext_resource type="Texture2D" uid="uid://b33mon0cll5n2" path="res://UI/ButtonThemes/IconButton/icon_booster2-pressed.png" id="13_xh7uu"]
+[ext_resource type="Texture2D" uid="uid://cmbppuc1mtl0p" path="res://UI/ButtonThemes/IconButton/icon_booster2-hover.png" id="14_dt12d"]
 
 [node name="InGameUI" type="CanvasLayer" unique_id=392788018]
 script = ExtResource("1_iybee")
@@ -30,43 +36,44 @@ offset_left = -540.0
 offset_right = 540.0
 offset_bottom = 252.0
 grow_horizontal = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 8
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 20
 
-[node name="Top-HBox" type="HBoxContainer" parent="InGameUI/General-Margin" unique_id=846132476]
+[node name="LeftButtons-Margin" type="MarginContainer" parent="InGameUI/General-Margin" unique_id=1968271622]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/margin_top = 16
 
-[node name="LeftButtons-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=226838701]
+[node name="LeftButtons-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/LeftButtons-Margin" unique_id=1697119123]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 40
 
-[node name="Sound-Button" type="Button" parent="InGameUI/General-Margin/Top-HBox/LeftButtons-HBox" unique_id=1930828619]
+[node name="Sound-Button" type="Button" parent="InGameUI/General-Margin/LeftButtons-Margin/LeftButtons-VBox" unique_id=1930828619]
 layout_mode = 2
 theme = ExtResource("7_qabgy")
 icon = ExtResource("3_2wdwc")
 
-[node name="Menu-Button" type="Button" parent="InGameUI/General-Margin/Top-HBox/LeftButtons-HBox" unique_id=705252355]
+[node name="Menu-Button" type="Button" parent="InGameUI/General-Margin/LeftButtons-Margin/LeftButtons-VBox" unique_id=705252355]
 layout_mode = 2
 theme = ExtResource("7_qabgy")
 icon = ExtResource("8_51tg6")
 
-[node name="Empty" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=1965676137]
+[node name="CenterCounters-HBox" type="HBoxContainer" parent="InGameUI/General-Margin" unique_id=535430210]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CenterCounters-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=1241016632]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Counter-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox" unique_id=288157892]
+[node name="Counter-Margin" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox" unique_id=288157892]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Bg-NinePatchRect" type="NinePatchRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin" unique_id=1898993787]
+[node name="Bg-NinePatchRect" type="NinePatchRect" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin" unique_id=1898993787]
 layout_mode = 2
 texture = ExtResource("2_slqm7")
 patch_margin_left = 56
@@ -74,47 +81,47 @@ patch_margin_top = 56
 patch_margin_right = 56
 patch_margin_bottom = 56
 
-[node name="Text+Icon-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin" unique_id=115322649]
+[node name="Text+Icon-Margin" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin" unique_id=115322649]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 34
 
-[node name="Counter-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin" unique_id=1198849235]
+[node name="Counter-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin/Text+Icon-Margin" unique_id=1198849235]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 6
 
-[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin/Counter-HBox" unique_id=331346275]
+[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin/Text+Icon-Margin/Counter-HBox" unique_id=331346275]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("4_yoa8l")
 
-[node name="Counter-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin/Counter-HBox" unique_id=748777219]
+[node name="Counter-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin/Text+Icon-Margin/Counter-HBox" unique_id=748777219]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin/Counter-HBox/Counter-VBox" unique_id=694705018]
+[node name="Negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin/Text+Icon-Margin/Counter-HBox/Counter-VBox" unique_id=694705018]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = -14
 
-[node name="Counter-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Counter-Margin/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=63904488]
+[node name="Counter-Label" type="Label" parent="InGameUI/General-Margin/CenterCounters-HBox/Counter-Margin/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=63904488]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "23 547"
+text = "236 547"
 label_settings = ExtResource("5_qabgy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Coins-Margin2" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox" unique_id=572598831]
+[node name="Coins-Margin2" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox" unique_id=572598831]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Bg-NinePatchRect" type="NinePatchRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2" unique_id=410341923]
+[node name="Bg-NinePatchRect" type="NinePatchRect" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2" unique_id=410341923]
 layout_mode = 2
 texture = ExtResource("2_slqm7")
 patch_margin_left = 56
@@ -122,58 +129,57 @@ patch_margin_top = 56
 patch_margin_right = 56
 patch_margin_bottom = 56
 
-[node name="Text+Icon-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2" unique_id=505989942]
+[node name="Text+Icon-Margin" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2" unique_id=505989942]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 34
 
-[node name="Counter-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin" unique_id=1879777399]
+[node name="Counter-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2/Text+Icon-Margin" unique_id=1879777399]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 6
 
-[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox" unique_id=382691297]
+[node name="Icon-TextureRect" type="TextureRect" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox" unique_id=382691297]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("8_2wdwc")
+texture = ExtResource("8_xh7uu")
 
-[node name="Counter-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox" unique_id=1897484262]
+[node name="Counter-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox" unique_id=1897484262]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox/Counter-VBox" unique_id=298877230]
+[node name="Negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox/Counter-VBox" unique_id=298877230]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = -14
 
-[node name="Coins-Label" type="Label" parent="InGameUI/General-Margin/Top-HBox/CenterCounters-VBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=873039949]
+[node name="Coins-Label" type="Label" parent="InGameUI/General-Margin/CenterCounters-HBox/Coins-Margin2/Text+Icon-Margin/Counter-HBox/Counter-VBox/Negative-Margin" unique_id=873039949]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "23 547"
+text = "236 547"
 label_settings = ExtResource("5_qabgy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty2" type="MarginContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=781786151]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RightButtons-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/Top-HBox" unique_id=854126020]
+[node name="RightButtons-HBox" type="VBoxContainer" parent="InGameUI/General-Margin" unique_id=1611032378]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_constants/separation = 40
+theme_override_constants/separation = 8
+alignment = 1
 
-[node name="Sound-Button" type="Button" parent="InGameUI/General-Margin/Top-HBox/RightButtons-HBox" unique_id=879701762]
+[node name="booster1" type="TextureButton" parent="InGameUI/General-Margin/RightButtons-HBox" unique_id=1766071497]
 layout_mode = 2
-theme = ExtResource("7_qabgy")
-icon = ExtResource("3_2wdwc")
+texture_normal = ExtResource("9_2wdwc")
+texture_pressed = ExtResource("10_3tcqs")
+texture_hover = ExtResource("11_8sg4q")
 
-[node name="Menu-Button" type="Button" parent="InGameUI/General-Margin/Top-HBox/RightButtons-HBox" unique_id=477273522]
+[node name="booster2" type="TextureButton" parent="InGameUI/General-Margin/RightButtons-HBox" unique_id=1802249266]
 layout_mode = 2
-theme = ExtResource("7_qabgy")
-icon = ExtResource("8_51tg6")
+texture_normal = ExtResource("10_qqjn3")
+texture_pressed = ExtResource("13_xh7uu")
+texture_hover = ExtResource("14_dt12d")
