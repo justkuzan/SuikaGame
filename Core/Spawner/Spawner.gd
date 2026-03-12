@@ -1,10 +1,11 @@
 extends Node2D
 class_name Spawner
 
-const FLOWER = preload("uid://daiia8h0goc0c")
+#const FLOWER = preload("uid://daiia8h0goc0c")
 const POS_LIM_MIN: Vector2 = Vector2(110.0, 350.0)
 const POS_LIM_MAX: Vector2 = Vector2(970.0, 350.0)
 
+@export var flower_scene: PackedScene
 @export var flowers_container: Node2D
 @export var spawn_controller: SpawnManager
 
@@ -16,7 +17,7 @@ var next_flower_data: FlowerData
 
 
 func _ready() -> void:
-	pass
+	update_position()
 
 
 func _input(event: InputEvent) -> void:
@@ -64,7 +65,7 @@ func apply_flower_data(data: FlowerData) -> void:
 
 func spawn_flower() -> void:
 	if !flower:
-		var new_flower = FLOWER.instantiate() as Flower
+		var new_flower = flower_scene.instantiate() as Flower
 
 		new_flower.flower_data = next_flower_data
 		new_flower.position = Vector2.ZERO

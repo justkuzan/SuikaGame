@@ -1,19 +1,21 @@
 extends Node2D
 class_name MergeManager
 
-const FLOWER = preload("uid://daiia8h0goc0c")
-const MERGE_EFFECTS = preload("uid://dvk3rdpl0y03s")
-const MERGE_POP_UP = preload("uid://sbokrpi4fox3")
 const SPIN_DIRECTION: Array = [-20.0, 20.0]
 
+@export var flower_scene: PackedScene
+@export var merge_effects_scene: PackedScene
+@export var popup_scene: PackedScene
 @export var flowers_container: Node2D
 
 @onready var pop_up_container: Node2D = %PopUpContainer
 
+var can_play_collide: bool = true
+
 
 func _ready() -> void:
 	SignalBus.flower_collide.connect(on_flower_collide)
-	var warmer = MERGE_EFFECTS.instantiate()
+	var warmer = merge_effects_scene.instantiate()
 	warmer.queue_free()
 
 
@@ -21,20 +23,27 @@ func on_flower_collide(pos: Vector2, data: FlowerData, flower_a: RigidBody2D, fl
 	if flower_a.is_queued_for_deletion() or flower_b.is_queued_for_deletion():
 		return
 
-	flower_a.queue_free()
-	flower_b.queue_free()
+	if flower_a.flower_data.lvl == flower_b.flower_data.lvl:
+		flower_a.queue_free()
+		flower_b.queue_free()
+		handle_merge_logic.call_deferred(pos, data)
+	else:
+		if not flower_a.has_collided or not flower_b.has_collided:
+			if flower_a.linear_velocity.length() > 100 or flower_b.linear_velocity.length() > 100:
+				AudioManager.play("collide")
 
-	handle_merge_logic.call_deferred(pos, data)
+				flower_a.has_collided = true
+				flower_b.has_collided = true
 
 
 func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
-	var merge_effects = MERGE_EFFECTS.instantiate() as MergeEffects
+	var merge_effects = merge_effects_scene.instantiate() as MergeEffects
 	add_child(merge_effects)
 	merge_effects.global_position = pos
 
 	if data.next_level != null:
 
-		var new_flower = FLOWER.instantiate() as Flower
+		var new_flower = flower_scene.instantiate() as Flower
 		new_flower.flower_data = data.next_level
 
 		new_flower.global_position = pos
@@ -59,7 +68,7 @@ func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
 
 
 func merge_pop_up_setup(pos, data) -> void:
-	var merge_pop_up = MERGE_POP_UP.instantiate() as MergePopUp
+	var merge_pop_up = popup_scene.instantiate() as MergePopUp
 	pop_up_container.add_child(merge_pop_up)
 	merge_pop_up.global_position = pos
 

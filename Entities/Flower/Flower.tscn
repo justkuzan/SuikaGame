@@ -12,14 +12,6 @@ bounce = 0.08
 resource_local_to_scene = true
 radius = 62.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_hfqmi"]
-font_size = 53
-outline_size = 15
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 27
-shadow_color = Color(0, 0, 0, 0.43400002)
-shadow_offset = Vector2(0, 0)
-
 [node name="Flower" type="RigidBody2D" unique_id=182945636 groups=["flowers"]]
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_hfqmi")
@@ -35,23 +27,5 @@ flower_data = ExtResource("2_cbsr3")
 
 [node name="FlowerCollision" type="CollisionShape2D" parent="." unique_id=1621350937]
 shape = SubResource("CircleShape2D_xbxml")
-
-[node name="LvlLabel" type="Label" parent="." unique_id=1094763755]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_hfqmi")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

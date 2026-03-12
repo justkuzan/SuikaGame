@@ -3,21 +3,37 @@
 [ext_resource type="Script" uid="uid://b0c25ube4hrwc" path="res://Globals/AudioManager/AudioManager.gd" id="1_il12q"]
 [ext_resource type="AudioStream" uid="uid://rq00xufu16v5" path="res://Assets/Sounds/swosh-04.mp3" id="2_gfrt4"]
 [ext_resource type="AudioStream" uid="uid://djgkiu4rg0a38" path="res://Assets/Sounds/dragon-studio-dry-grass-rustling-478361.mp3" id="2_jhp1h"]
+[ext_resource type="AudioStream" uid="uid://c3r87u8hb2rrd" path="res://Assets/Sounds/grass-collide.ogg" id="3_f4s7p"]
+[ext_resource type="AudioStream" uid="uid://b88djriwn04xa" path="res://Assets/Sounds/Ding.ogg" id="4_ivlit"]
 [ext_resource type="AudioStream" uid="uid://cuaastmrauxg4" path="res://Assets/Sounds/background-music-elegant.ogg" id="4_oi62k"]
 [ext_resource type="AudioStream" uid="uid://f1smnyd43l2n" path="res://Assets/Sounds/background_field.ogg" id="5_ivlit"]
 
 [node name="AudioManager" type="Node" unique_id=226611794]
 script = ExtResource("1_il12q")
 
+[node name="Drop" type="AudioStreamPlayer" parent="." unique_id=42625803]
+stream = ExtResource("2_gfrt4")
+volume_db = -8.0
+max_polyphony = 3
+bus = &"Effects"
+
+[node name="Collide" type="AudioStreamPlayer" parent="." unique_id=793360121]
+stream = ExtResource("3_f4s7p")
+volume_db = -2.0
+pitch_scale = 0.9
+max_polyphony = 4
+bus = &"Effects"
+
 [node name="Merge" type="AudioStreamPlayer" parent="." unique_id=1099357363]
 stream = ExtResource("2_jhp1h")
+volume_db = -4.0
 max_polyphony = 6
 bus = &"Effects"
 
-[node name="Drop" type="AudioStreamPlayer" parent="." unique_id=42625803]
-stream = ExtResource("2_gfrt4")
-volume_db = -1.0
-max_polyphony = 3
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=844262331]
+stream = ExtResource("4_ivlit")
+volume_db = -8.0
+max_polyphony = 8
 bus = &"Effects"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2122916426]

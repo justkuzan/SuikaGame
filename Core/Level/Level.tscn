@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://d2682g4r85urc"]
 
 [ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
-[ext_resource type="Texture2D" uid="uid://x6g0assjske" path="res://Assets/Sprites/Backgrounds/photo_2026-03-09_12-14-57.jpg" id="3_6o4ui"]
+[ext_resource type="Texture2D" uid="uid://baupwld1duu3w" path="res://Assets/Sprites/Backgrounds/photo_2026-03-09_12-14-57.webp" id="2_bfaga"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
+[ext_resource type="PackedScene" uid="uid://daiia8h0goc0c" path="res://Entities/Flower/Flower.tscn" id="5_uqkfl"]
 [ext_resource type="PackedScene" uid="uid://donyt0ner6305" path="res://Core/WorldEffects/WorldEffects.tscn" id="6_522nl"]
 [ext_resource type="PackedScene" uid="uid://bkjnqum5em45w" path="res://Core/SpawnManager/SpawnManager.tscn" id="7_8t823"]
 [ext_resource type="PackedScene" uid="uid://b5lemwi1ji8b1" path="res://Core/MergeManager/MergeManager.tscn" id="7_13dte"]
 [ext_resource type="PackedScene" uid="uid://wt22gdfc845k" path="res://UI/InGameUI.tscn" id="8_8t823"]
 [ext_resource type="PackedScene" uid="uid://dvk3rdpl0y03s" path="res://Core/MergeEffects/MergeEffects.tscn" id="8_bfaga"]
+[ext_resource type="PackedScene" uid="uid://sbokrpi4fox3" path="res://Core/MergePopUp/MergePopUp.tscn" id="8_wfa2j"]
 [ext_resource type="PackedScene" uid="uid://cs8lsl3mrpaaa" path="res://Core/ScoreManager/ScoreManager.tscn" id="9_4pbvs"]
 [ext_resource type="PackedScene" uid="uid://b3r7vl5nhfrb0" path="res://Core/DebugManager/DebugManager.tscn" id="10_s8yjo"]
 [ext_resource type="Script" uid="uid://tldxv83eax52" path="res://DataClasses/FlowerData.gd" id="11_6o4ui"]
@@ -33,15 +35,19 @@ metadata/_edit_lock_ = true
 [node name="Background" type="Sprite2D" parent="." unique_id=1315821625]
 position = Vector2(589, 915)
 scale = Vector2(3.17, 3.17)
-texture = ExtResource("3_6o4ui")
+texture = ExtResource("2_bfaga")
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
 
 [node name="Spawner" parent="." unique_id=967311033 node_paths=PackedStringArray("flowers_container", "spawn_controller") instance=ExtResource("4_xvumq")]
+flower_scene = ExtResource("5_uqkfl")
 flowers_container = NodePath("../FlowerContainer")
 spawn_controller = NodePath("../SpawnController")
 
 [node name="MergeHandler" parent="." unique_id=731583569 node_paths=PackedStringArray("flowers_container") instance=ExtResource("7_13dte")]
+flower_scene = ExtResource("5_uqkfl")
+merge_effects_scene = ExtResource("8_bfaga")
+popup_scene = ExtResource("8_wfa2j")
 flowers_container = NodePath("../FlowerContainer")
 
 [node name="FlowerContainer" type="Node2D" parent="." unique_id=1583152697]

@@ -7,19 +7,12 @@ const DEFAULT_SPRITE = preload("uid://bxymses568v8i")
 
 @onready var flower_sprite: Sprite2D = $FlowerSprite
 @onready var flower_collision: CollisionShape2D = $FlowerCollision
-@onready var lvl_label: Label = $LvlLabel
+
+var has_collided: bool = false
 
 
 func _ready() -> void:
-	SignalBus.debug_mode_changed.connect(update_label)
 	update_flower()
-
-	var current_level = get_tree().current_scene as Level
-
-	if current_level:
-		update_label(current_level.is_debug_enabled)
-	else:
-		update_label(false)
 
 
 func update_flower() -> void:
@@ -38,15 +31,11 @@ func update_flower() -> void:
 		mass = flower_data.mass
 
 
-func update_label(mode: bool) -> void:
-	if flower_data:
-		lvl_label.text = "%d" % flower_data.lvl
-
-	lvl_label.visible = mode
-
-
 func _on_body_entered(body: Node) -> void:
 	if body is Flower:
 		if flower_data == body.flower_data:
 			if get_instance_id() > body.get_instance_id():
 				SignalBus.flower_collide.emit(self.global_position, self.flower_data, self, body)
+		else:
+			if get_instance_id() > body.get_instance_id():
+				SignalBus.flower_collide.emit(global_position, flower_data, self, body)
