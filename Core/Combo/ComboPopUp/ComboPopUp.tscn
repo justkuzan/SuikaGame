@@ -3,21 +3,17 @@
 [ext_resource type="Script" uid="uid://do0hru87van1x" path="res://Core/Combo/ComboPopUp/ComboPopUp.gd" id="1_wmctw"]
 [ext_resource type="LabelSettings" uid="uid://o6wl2qstblqh" path="res://Resources/Fonts/Playpens-96-Purple-WhiteShadow.tres" id="3_vm44t"]
 
-[node name="ComboPopUp" type="Node2D" unique_id=1265344167]
+[node name="ComboPopUp" type="CanvasLayer" unique_id=683500352]
 script = ExtResource("1_wmctw")
 
 [node name="ComboPopUp-Label" type="Label" parent="." unique_id=212244853]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 1046.0
-offset_bottom = 146.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 197.0
+offset_bottom = 343.0
 grow_horizontal = 2
-grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 text = "Само Совершенство!"
 label_settings = ExtResource("3_vm44t")
 horizontal_alignment = 1

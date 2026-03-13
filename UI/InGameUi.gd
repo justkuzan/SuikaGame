@@ -6,7 +6,7 @@ class_name InGameUI
 @onready var counter_label: Label = %"Counter-Label"
 @onready var coins_label: Label = %"Coins-Label"
 @onready var combo_counter_label: Label = %"ComboCounter-Label"
-@onready var combo_pop_up_margin: MarginContainer = %"ComboPopUp-Margin"
+@onready var combo_pop_up_control: Control = %"ComboPopUp-Control"
 
 
 func _ready() -> void:
@@ -16,6 +16,8 @@ func _ready() -> void:
 
 	counter_label.text = str(GameManager.total_score)
 	coins_label.text = str(GameManager.total_coins)
+
+	combo_pop_up_control.scale = Vector2.ZERO
 
 
 func update_score_label(current_value: int):
@@ -41,15 +43,28 @@ func on_coins_changed(coins: int) -> void:
 
 
 func on_combo_updated(combo_count: int, _combo_multiplier: int) -> void:
-	if combo_count > 1:
-		combo_pop_up_margin.show()
+	if combo_count == 2:
 		combo_counter_label.text = str(combo_count)
-		pulse_tween(combo_pop_up_margin)
-	else:
-		combo_pop_up_margin.hide()
+		appearance_tween(combo_pop_up_control)
+	elif combo_count > 2:
+		combo_counter_label.text = str(combo_count)
+		pulse_tween(combo_pop_up_control)
+	elif combo_count == 0:
+		disappearance_tween(combo_pop_up_control)
 
 
 func pulse_tween(label: Node) -> void:
 	var tween = create_tween()
 	tween.tween_property(label, "scale", Vector2(1.4, 1.4), animation_duration)
 	tween.tween_property(label, "scale", Vector2.ONE, animation_duration)
+
+
+func appearance_tween(label: Node) -> void:
+	label.scale = Vector2.ZERO
+	var tween = create_tween()
+	tween.tween_property(label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK)
+
+
+func disappearance_tween(label: Node) -> void:
+	var tween = create_tween()
+	tween.tween_property(label, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_BACK)

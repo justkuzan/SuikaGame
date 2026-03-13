@@ -18,7 +18,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_fuss0"]
 font = ExtResource("2_dt12d")
-font_size = 40
+font_size = 48
 font_color = Color(0.67058825, 0.28235295, 0.5058824, 1)
 outline_color = Color(0.4117647, 0.3254902, 0.28627452, 1)
 shadow_size = 20
@@ -27,7 +27,7 @@ shadow_offset = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxbqx"]
 font = ExtResource("2_dt12d")
-font_size = 82
+font_size = 88
 font_color = Color(0.67058825, 0.28235295, 0.5058824, 1)
 shadow_size = 30
 shadow_color = Color(1, 0.94509804, 0.84705883, 1)
@@ -45,6 +45,54 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="ComboPopUp-Control" type="Control" parent="InGameUI" unique_id=573172312]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -804.0
+offset_right = -45.0
+offset_bottom = -804.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(54.48, 67.87)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ComboPopUp-HBox" type="HBoxContainer" parent="InGameUI/ComboPopUp-Control" unique_id=637216427]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 124.0
+size_flags_vertical = 8
+theme_override_constants/separation = 12
+
+[node name="xLabel-VBox" type="VBoxContainer" parent="InGameUI/ComboPopUp-Control/ComboPopUp-HBox" unique_id=1964431708]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="negative-Margin" type="MarginContainer" parent="InGameUI/ComboPopUp-Control/ComboPopUp-HBox/xLabel-VBox" unique_id=943443096]
+layout_mode = 2
+theme_override_constants/margin_top = 43
+
+[node name="x-Label" type="Label" parent="InGameUI/ComboPopUp-Control/ComboPopUp-HBox/xLabel-VBox" unique_id=1642602147]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "x"
+label_settings = SubResource("LabelSettings_fuss0")
+
+[node name="ComboCounter-Label" type="Label" parent="InGameUI/ComboPopUp-Control/ComboPopUp-HBox" unique_id=774170373]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "8"
+label_settings = SubResource("LabelSettings_lxbqx")
+
 [node name="General-Margin" type="MarginContainer" parent="InGameUI" unique_id=1401164672]
 layout_mode = 1
 anchors_preset = 5
@@ -58,42 +106,6 @@ theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 20
-
-[node name="ComboPopUp-Margin" type="MarginContainer" parent="InGameUI/General-Margin" unique_id=674316347]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/margin_bottom = 30
-
-[node name="ComboPopUp-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin" unique_id=637216427]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 12
-
-[node name="xLabel-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox" unique_id=1964431708]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox/xLabel-VBox" unique_id=943443096]
-layout_mode = 2
-theme_override_constants/margin_top = 45
-
-[node name="x-Label" type="Label" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox/xLabel-VBox" unique_id=1642602147]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "x"
-label_settings = SubResource("LabelSettings_fuss0")
-
-[node name="ComboCounter-Label" type="Label" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox" unique_id=774170373]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-text = "8"
-label_settings = SubResource("LabelSettings_lxbqx")
 
 [node name="LeftButtons-Margin" type="MarginContainer" parent="InGameUI/General-Margin" unique_id=1968271622]
 layout_mode = 2

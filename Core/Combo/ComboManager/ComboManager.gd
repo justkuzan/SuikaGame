@@ -4,6 +4,7 @@ class_name ComboManager
 @export var combo_popup_scene: PackedScene
 @export var combo_phrases: Array[String] = []
 @onready var combo_timer: Timer = $ComboTimer
+@onready var pop_up_container: Node2D = %PopUpContainer
 
 var combo_counter: int = 0
 var combo_multiplier: int = 1
@@ -32,7 +33,20 @@ func update_multiplier() -> void:
 		combo_multiplier = (combo_counter / 2) * 2
 
 
+func spawn_combo_popup_scene() -> void:
+	var popup = combo_popup_scene.instantiate()
+	pop_up_container.add_child(popup)
+	#popup.global_position = screen_center
+
+	var phrase_index = clampi(combo_counter - 2, 0, combo_phrases.size() - 1)
+	var selected_text = combo_phrases[phrase_index]
+	popup.setup(selected_text)
+
+
 func _on_combo_timer_timeout() -> void:
+	if combo_counter >= 2:
+		spawn_combo_popup_scene()
+
 	combo_counter = 0
 	combo_multiplier = 1
 	SignalBus.combo_updated.emit(combo_counter, combo_multiplier)
