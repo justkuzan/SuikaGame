@@ -57,14 +57,14 @@ func handle_merge_logic(pos: Vector2, data: FlowerData) -> void:
 		merge_effects.setup(data)
 		merge_pop_up_setup(pos, data)
 
-		SignalBus.flower_merged.emit(pos, data.lvl)
+		SignalBus.flower_merged.emit(pos, data.lvl, 0, 0)
 
 	else:
 		AudioManager.play("merge")
 		merge_effects.last_lvl_setup(data)
 		merge_pop_up_setup(pos, data)
 
-		SignalBus.flower_merged.emit(pos, data.lvl)
+		SignalBus.flower_merged.emit(pos, data.lvl, 0, 0)
 
 
 func merge_pop_up_setup(pos, data) -> void:

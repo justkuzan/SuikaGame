@@ -17,4 +17,4 @@ signal high_score_changed(value)
 
 signal coins_changed(value)
 
-signal combo_updated(pos: Vector2, combo_count: int, combo_multiplier: int)
+signal combo_updated(combo_count: int, combo_multiplier: int)

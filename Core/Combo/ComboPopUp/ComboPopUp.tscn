@@ -1,37 +1,24 @@
 [gd_scene format=3 uid="uid://cg8yt540127fo"]
 
 [ext_resource type="Script" uid="uid://do0hru87van1x" path="res://Core/Combo/ComboPopUp/ComboPopUp.gd" id="1_wmctw"]
-[ext_resource type="FontFile" uid="uid://c78hinh815qtv" path="res://Assets/Fonts/PlaypenSans-Bold.woff2" id="2_tpm8g"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wr3qj"]
-font = ExtResource("2_tpm8g")
-font_size = 96
-font_color = Color(0.54296875, 0.23754883, 0.4548668, 1)
-outline_size = 15
-outline_color = Color(0.3671875, 0.09036255, 0.28631717, 1)
-shadow_size = 52
-shadow_color = Color(1, 0.94509804, 0.84705883, 1)
-shadow_offset = Vector2(0, 0)
+[ext_resource type="LabelSettings" uid="uid://o6wl2qstblqh" path="res://Resources/Fonts/Playpens-96-Purple-WhiteShadow.tres" id="3_vm44t"]
 
 [node name="ComboPopUp" type="Node2D" unique_id=1265344167]
 script = ExtResource("1_wmctw")
 
-[node name="ComboPopUp-Margin" type="MarginContainer" parent="." unique_id=1189475794]
+[node name="ComboPopUp-Label" type="Label" parent="." unique_id=212244853]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 1046.0
+offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="ComboPopUp-Margin" unique_id=739782871]
-layout_mode = 2
 text = "Само Совершенство!"
-label_settings = SubResource("LabelSettings_wr3qj")
+label_settings = ExtResource("3_vm44t")
+horizontal_alignment = 1
+vertical_alignment = 1

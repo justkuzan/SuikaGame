@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_1h4e2")
 lvl = 3
-score_value = 11
+score_value = 6
 coin_value = 1
 mass = 0.27
 collision_radius = 75.0

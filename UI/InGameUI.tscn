@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wt22gdfc845k"]
 
 [ext_resource type="Script" uid="uid://b5tjkq6wgnoo6" path="res://UI/InGameUi.gd" id="1_iybee"]
-[ext_resource type="PackedScene" uid="uid://cfg46ait1mbc8" path="res://Core/Combo/ComboCounter/ComboCounter.tscn" id="2_dt12d"]
+[ext_resource type="FontFile" uid="uid://c78hinh815qtv" path="res://Assets/Fonts/PlaypenSans-Bold.woff2" id="2_dt12d"]
 [ext_resource type="Texture2D" uid="uid://d2hpv8y3031am" path="res://UI/Panels/panel_bg_default.png" id="2_slqm7"]
 [ext_resource type="Texture2D" uid="uid://chwqtey4bukgh" path="res://UI/Icons/icon-menu.png" id="3_2wdwc"]
 [ext_resource type="Texture2D" uid="uid://df0n7sfefdnl" path="res://UI/Icons/icon-flower.png" id="4_yoa8l"]
@@ -15,6 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://cjedtsko2frr1" path="res://UI/ButtonThemes/IconButton/icon_booster1-hover.png" id="11_8sg4q"]
 [ext_resource type="Texture2D" uid="uid://b33mon0cll5n2" path="res://UI/ButtonThemes/IconButton/icon_booster2-pressed.png" id="13_xh7uu"]
 [ext_resource type="Texture2D" uid="uid://cmbppuc1mtl0p" path="res://UI/ButtonThemes/IconButton/icon_booster2-hover.png" id="14_dt12d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fuss0"]
+font = ExtResource("2_dt12d")
+font_size = 40
+font_color = Color(0.67058825, 0.28235295, 0.5058824, 1)
+outline_color = Color(0.4117647, 0.3254902, 0.28627452, 1)
+shadow_size = 20
+shadow_color = Color(1, 0.94509804, 0.84705883, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxbqx"]
+font = ExtResource("2_dt12d")
+font_size = 82
+font_color = Color(0.67058825, 0.28235295, 0.5058824, 1)
+shadow_size = 30
+shadow_color = Color(1, 0.94509804, 0.84705883, 1)
+shadow_offset = Vector2(0, 0)
 
 [node name="InGameUI" type="CanvasLayer" unique_id=392788018]
 script = ExtResource("1_iybee")
@@ -42,10 +59,41 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 20
 
-[node name="ComboPopUp-Margin" parent="InGameUI/General-Margin" unique_id=26706377 instance=ExtResource("2_dt12d")]
+[node name="ComboPopUp-Margin" type="MarginContainer" parent="InGameUI/General-Margin" unique_id=674316347]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/margin_bottom = 30
+
+[node name="ComboPopUp-HBox" type="HBoxContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin" unique_id=637216427]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 12
+
+[node name="xLabel-VBox" type="VBoxContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox" unique_id=1964431708]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="negative-Margin" type="MarginContainer" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox/xLabel-VBox" unique_id=943443096]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="x-Label" type="Label" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox/xLabel-VBox" unique_id=1642602147]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "x"
+label_settings = SubResource("LabelSettings_fuss0")
+
+[node name="ComboCounter-Label" type="Label" parent="InGameUI/General-Margin/ComboPopUp-Margin/ComboPopUp-HBox" unique_id=774170373]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "8"
+label_settings = SubResource("LabelSettings_lxbqx")
 
 [node name="LeftButtons-Margin" type="MarginContainer" parent="InGameUI/General-Margin" unique_id=1968271622]
 layout_mode = 2

@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_0fi5r")
-score_value = 5
+score_value = 1
 coin_value = 1
 mass = 0.1
 collision_radius = 62.0

@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://d1cw54awvjmc1" path="res://Resources/Flowers/Flower_lvl_8.tres" id="19_sm7tg"]
 [ext_resource type="Resource" uid="uid://cbroca2io0ch7" path="res://Resources/Flowers/Flower_lvl_9.tres" id="20_thhmb"]
 [ext_resource type="Resource" uid="uid://dcx17wa75bo80" path="res://Resources/Flowers/Flower_lvl_10.tres" id="21_3j116"]
+[ext_resource type="PackedScene" uid="uid://dy77c5fvl7uvv" path="res://Core/Combo/ComboManager/ComboManager.tscn" id="25_8bs7h"]
 
 [node name="Level" type="Node2D" unique_id=556264147]
 script = ExtResource("1_5iy7f")
@@ -36,8 +37,10 @@ metadata/_edit_lock_ = true
 position = Vector2(563, 912)
 scale = Vector2(2.075, 2.075)
 texture = ExtResource("2_wfa2j")
+metadata/_edit_lock_ = true
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
+metadata/_edit_lock_ = true
 
 [node name="Spawner" parent="." unique_id=967311033 node_paths=PackedStringArray("flowers_container", "spawn_controller") instance=ExtResource("4_xvumq")]
 flower_scene = ExtResource("5_uqkfl")
@@ -61,6 +64,8 @@ spawner = NodePath("../Spawner")
 
 [node name="PopUpContainer" type="Node2D" parent="." unique_id=1270050883]
 unique_name_in_owner = true
+
+[node name="ComboManager" parent="." unique_id=597900910 instance=ExtResource("25_8bs7h")]
 
 [node name="WorldEffects" parent="." unique_id=1849028498 instance=ExtResource("6_522nl")]
 
