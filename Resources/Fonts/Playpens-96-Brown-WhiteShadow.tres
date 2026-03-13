@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c0rogyaopkta"]
+
+[ext_resource type="FontFile" uid="uid://c78hinh815qtv" path="res://Assets/Fonts/PlaypenSans-Bold.woff2" id="1_4w8in"]
+
+[resource]
+font = ExtResource("1_4w8in")
+font_size = 96
+font_color = Color(0.4117647, 0.3254902, 0.28627452, 1)
+shadow_size = 36
+shadow_color = Color(1, 0.94509804, 0.84705883, 1)
+shadow_offset = Vector2(0, 0)

@@ -1,27 +1,9 @@
 [gd_scene format=3 uid="uid://sbokrpi4fox3"]
 
 [ext_resource type="Script" uid="uid://bprpqa788p31t" path="res://Core/MergePopUp/MergePopUp.gd" id="1_ml06o"]
-[ext_resource type="FontFile" uid="uid://cacm4b36c5c5a" path="res://Assets/Fonts/Pacifico-Regular.ttf" id="2_ml06o"]
+[ext_resource type="LabelSettings" uid="uid://3rpdiwlpxmq8" path="res://Resources/Fonts/Pacifico-64-Brown-WhiteShadow.tres" id="2_ml06o"]
+[ext_resource type="LabelSettings" uid="uid://b2u3wlysfrlhh" path="res://Resources/Fonts/Pacifico-64-Yellow-WhiteShadow.tres" id="3_lq5jn"]
 [ext_resource type="Texture2D" uid="uid://clfk0w62ft64m" path="res://UI/Icons/icon-coin-big.png" id="5_lq5jn"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_lq5jn"]
-font = ExtResource("2_ml06o")
-font_size = 64
-font_color = Color(0.40392157, 0.24705882, 0.18431373, 1)
-outline_color = Color(0.40234375, 0.2482388, 0.18545532, 1)
-shadow_size = 36
-shadow_color = Color(1, 0.94509804, 0.84705883, 1)
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_oyyt3"]
-font = ExtResource("2_ml06o")
-font_size = 64
-font_color = Color(1, 0.6745098, 0.2, 1)
-outline_size = 12
-outline_color = Color(0.390625, 0.26646036, 0.08544922, 1)
-shadow_size = 36
-shadow_color = Color(1, 0.94509804, 0.84705883, 1)
-shadow_offset = Vector2(0, 0)
 
 [node name="MergePopUp" type="Node2D" unique_id=630514629]
 z_index = 500
@@ -61,7 +43,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "+25"
-label_settings = SubResource("LabelSettings_lq5jn")
+label_settings = ExtResource("2_ml06o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -86,7 +68,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "+4"
-label_settings = SubResource("LabelSettings_oyyt3")
+label_settings = ExtResource("3_lq5jn")
 horizontal_alignment = 1
 vertical_alignment = 1
 

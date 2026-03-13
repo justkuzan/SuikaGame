@@ -8,19 +8,26 @@ absorbent = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wor16"]
 size = Vector2(60, 1930)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsm2a"]
+size = Vector2(1077.5, 49)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fw4ib"]
 
 [node name="Board" type="StaticBody2D" unique_id=219081279]
 physics_material_override = SubResource("PhysicsMaterial_0n6ah")
 
 [node name="Box" type="Sprite2D" parent="." unique_id=2013337957]
-position = Vector2(540, 1172)
-scale = Vector2(1.9, 1.9)
+position = Vector2(647.00006, 1179)
+scale = Vector2(1.15, 1.15)
 texture = ExtResource("3_q74st")
 
 [node name="left" type="CollisionShape2D" parent="." unique_id=862982334]
 position = Vector2(29, 957.20013)
 shape = SubResource("RectangleShape2D_wor16")
+
+[node name="top" type="CollisionShape2D" parent="." unique_id=2088549445]
+position = Vector2(540.25, -35)
+shape = SubResource("RectangleShape2D_bsm2a")
 
 [node name="right" type="CollisionShape2D" parent="." unique_id=1095705318]
 position = Vector2(1052, 957.20013)

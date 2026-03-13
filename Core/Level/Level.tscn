@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2682g4r85urc"]
 
 [ext_resource type="Script" uid="uid://fp4uuqcr4ycj" path="res://Core/Level/Level.gd" id="1_5iy7f"]
-[ext_resource type="Texture2D" uid="uid://baupwld1duu3w" path="res://Assets/Sprites/Backgrounds/photo_2026-03-09_12-14-57.webp" id="2_bfaga"]
+[ext_resource type="Texture2D" uid="uid://qy24i7vfknsl" path="res://Assets/Sprites/Backgrounds/enhanced_Back_removed-shadows.webp" id="2_wfa2j"]
 [ext_resource type="PackedScene" uid="uid://d0rbvn7ybi2sx" path="res://Core/Board/Board.tscn" id="3_sgdpc"]
 [ext_resource type="PackedScene" uid="uid://bgaevyvwgoirs" path="res://Core/Spawner/Spawner.tscn" id="4_xvumq"]
 [ext_resource type="PackedScene" uid="uid://daiia8h0goc0c" path="res://Entities/Flower/Flower.tscn" id="5_uqkfl"]
@@ -33,9 +33,9 @@ position = Vector2(540, 960)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1315821625]
-position = Vector2(589, 915)
-scale = Vector2(3.17, 3.17)
-texture = ExtResource("2_bfaga")
+position = Vector2(563, 912)
+scale = Vector2(2.075, 2.075)
+texture = ExtResource("2_wfa2j")
 
 [node name="Board" parent="." unique_id=219081279 instance=ExtResource("3_sgdpc")]
 

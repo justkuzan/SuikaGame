@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://b2u3wlysfrlhh"]
+
+[ext_resource type="FontFile" uid="uid://camxlr77wob1e" path="res://Assets/Fonts/Pacifico-Regular.woff2" id="1_1k4ug"]
+
+[resource]
+font = ExtResource("1_1k4ug")
+font_size = 64
+font_color = Color(1, 0.6745098, 0.2, 1)
+outline_size = 12
+outline_color = Color(0.390625, 0.26646036, 0.08544922, 1)
+shadow_size = 36
+shadow_color = Color(1, 0.94509804, 0.84705883, 1)
+shadow_offset = Vector2(0, 0)

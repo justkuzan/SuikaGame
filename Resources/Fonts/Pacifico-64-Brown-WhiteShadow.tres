@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://3rpdiwlpxmq8"]
+
+[ext_resource type="FontFile" uid="uid://camxlr77wob1e" path="res://Assets/Fonts/Pacifico-Regular.woff2" id="1_taopj"]
+
+[resource]
+font = ExtResource("1_taopj")
+font_size = 64
+font_color = Color(0.40392157, 0.24705882, 0.18431373, 1)
+outline_color = Color(0.40234375, 0.2482388, 0.18545532, 1)
+shadow_size = 36
+shadow_color = Color(1, 0.94509804, 0.84705883, 1)
+shadow_offset = Vector2(0, 0)
