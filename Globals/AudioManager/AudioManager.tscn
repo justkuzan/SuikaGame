@@ -30,7 +30,7 @@ volume_db = -4.0
 max_polyphony = 6
 bus = &"Effects"
 
-[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=844262331]
+[node name="Combo" type="AudioStreamPlayer" parent="." unique_id=844262331]
 stream = ExtResource("4_ivlit")
 volume_db = -8.0
 max_polyphony = 8

@@ -18,6 +18,7 @@ func on_flower_merged(_pos: Vector2, _lvl: int, _score: int, _coins: int) -> voi
 		combo_counter = 1
 	else:
 		combo_counter += 1
+		play_combo_audio()
 
 	update_multiplier()
 	combo_timer.start()
@@ -35,3 +36,9 @@ func _on_combo_timer_timeout() -> void:
 	combo_counter = 0
 	combo_multiplier = 1
 	SignalBus.combo_updated.emit(combo_counter, combo_multiplier)
+
+
+func play_combo_audio() -> void:
+	var raw_pitch = 1.0 + (0.05 * (combo_counter - 2))
+	AudioManager.combo.pitch_scale = clampf(raw_pitch, 1.0, 1.4)
+	AudioManager.play("combo")

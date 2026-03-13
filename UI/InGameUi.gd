@@ -40,7 +40,7 @@ func on_coins_changed(coins: int) -> void:
 	pulse_tween(coins_label)
 
 
-func on_combo_updated(combo_count: int, combo_multiplier: int) -> void:
+func on_combo_updated(combo_count: int, _combo_multiplier: int) -> void:
 	if combo_count > 1:
 		combo_pop_up_margin.show()
 		combo_counter_label.text = str(combo_count)
