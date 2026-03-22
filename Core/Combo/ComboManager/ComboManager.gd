@@ -1,6 +1,9 @@
 extends Node
 class_name ComboManager
 
+@export var balance: GameBalance
+
+@export var min_combo_threshold: int = 3
 @export var combo_popup_scene: PackedScene
 @export var combo_phrases: Array[String] = []
 @onready var combo_timer: Timer = $ComboTimer
@@ -8,6 +11,10 @@ class_name ComboManager
 
 var combo_counter: int = 0
 var combo_multiplier: int = 1
+
+#Пусть ComboManager сам решает, достаточно ли высоко поднялся счетчик,
+#и посылает в сигнале не только цифру, но и «состояние» (например, флаг is_active).
+#Ну и нам надо чтобы он посылал еще вектор (посмотреть на Мердж Поп Ап)
 
 
 func _ready() -> void:
@@ -19,6 +26,8 @@ func on_flower_merged(_pos: Vector2, _lvl: int, _score: int, _coins: int) -> voi
 		combo_counter = 1
 	else:
 		combo_counter += 1
+
+	if combo_counter >= min_combo_threshold:
 		play_combo_audio()
 
 	update_multiplier()
@@ -27,10 +36,10 @@ func on_flower_merged(_pos: Vector2, _lvl: int, _score: int, _coins: int) -> voi
 
 
 func update_multiplier() -> void:
-	if combo_counter < 2:
+	if combo_counter < min_combo_threshold:
 		combo_multiplier = 1
 	else:
-		combo_multiplier = (combo_counter / 2) * 2
+		combo_multiplier = ((combo_counter - min_combo_threshold) / 2 + 1) * 2
 
 
 func spawn_combo_popup_scene() -> void:
@@ -38,14 +47,15 @@ func spawn_combo_popup_scene() -> void:
 	pop_up_container.add_child(popup)
 	#popup.global_position = screen_center
 
-	var phrase_index = clampi(combo_counter - 2, 0, combo_phrases.size() - 1)
+	var phrase_index = clampi(combo_counter - min_combo_threshold, 0, combo_phrases.size() - 1)
 	var selected_text = combo_phrases[phrase_index]
 	popup.setup(selected_text)
 
 
 func _on_combo_timer_timeout() -> void:
-	if combo_counter >= 2:
+	if combo_counter >= min_combo_threshold:
 		spawn_combo_popup_scene()
+		#AudioManager.play("combo_end")
 
 	combo_counter = 0
 	combo_multiplier = 1
@@ -53,6 +63,6 @@ func _on_combo_timer_timeout() -> void:
 
 
 func play_combo_audio() -> void:
-	var raw_pitch = 1.0 + (0.05 * (combo_counter - 2))
+	var raw_pitch = 1.0 + (0.05 * (combo_counter - min_combo_threshold))
 	AudioManager.combo.pitch_scale = clampf(raw_pitch, 1.0, 1.4)
 	AudioManager.play("combo")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GameBalance" format=3 uid="uid://w2s0te3fdxps"]
+
+[ext_resource type="Script" uid="uid://d0w24yvuksu0f" path="res://Core/GameBalance.gd" id="1_x4b6j"]
+
+[resource]
+script = ExtResource("1_x4b6j")
+metadata/_custom_type_script = "uid://d0w24yvuksu0f"

@@ -4,6 +4,7 @@ extends Node
 @onready var collide: AudioStreamPlayer = $Collide
 @onready var merge: AudioStreamPlayer = $Merge
 @onready var combo: AudioStreamPlayer = $Combo
+@onready var combo_end: AudioStreamPlayer = $ComboEnd
 @onready var music: AudioStreamPlayer = $Music
 @onready var ambience: AudioStreamPlayer = $Ambience
 
@@ -23,6 +24,9 @@ func play(sound_name: String) -> void:
 
 		"combo":
 			combo.play()
+
+		"combo_end":
+			combo_end.play()
 
 		"music":
 			music.play()

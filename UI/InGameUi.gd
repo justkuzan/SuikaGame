@@ -43,10 +43,10 @@ func on_coins_changed(coins: int) -> void:
 
 
 func on_combo_updated(combo_count: int, _combo_multiplier: int) -> void:
-	if combo_count == 2:
+	if combo_count == 3:
 		combo_counter_label.text = str(combo_count)
 		appearance_tween(combo_pop_up_control)
-	elif combo_count > 2:
+	elif combo_count > 3:
 		combo_counter_label.text = str(combo_count)
 		pulse_tween(combo_pop_up_control)
 	elif combo_count == 0:

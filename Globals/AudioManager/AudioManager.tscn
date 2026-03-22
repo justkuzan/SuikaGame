@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b88djriwn04xa" path="res://Assets/Sounds/Ding.ogg" id="4_ivlit"]
 [ext_resource type="AudioStream" uid="uid://cuaastmrauxg4" path="res://Assets/Sounds/background-music-elegant.ogg" id="4_oi62k"]
 [ext_resource type="AudioStream" uid="uid://f1smnyd43l2n" path="res://Assets/Sounds/background_field.ogg" id="5_ivlit"]
+[ext_resource type="AudioStream" uid="uid://brkcm7x3uf1jl" path="res://Assets/Sounds/combo_end.ogg" id="6_4m0ye"]
 
 [node name="AudioManager" type="Node" unique_id=226611794]
 script = ExtResource("1_il12q")
@@ -32,9 +33,14 @@ bus = &"Effects"
 
 [node name="Combo" type="AudioStreamPlayer" parent="." unique_id=844262331]
 stream = ExtResource("4_ivlit")
-volume_db = -8.0
+volume_db = -12.0
 max_polyphony = 8
 bus = &"Effects"
+
+[node name="ComboEnd" type="AudioStreamPlayer" parent="." unique_id=332470044]
+stream = ExtResource("6_4m0ye")
+volume_db = -10.0
+pitch_scale = 1.2
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2122916426]
 stream = ExtResource("4_oi62k")

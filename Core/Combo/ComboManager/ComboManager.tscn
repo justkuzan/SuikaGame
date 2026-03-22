@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dy77c5fvl7uvv"]
 
 [ext_resource type="Script" uid="uid://dackvt7rgd7dy" path="res://Core/Combo/ComboManager/ComboManager.gd" id="1_gs8m6"]
+[ext_resource type="Resource" uid="uid://w2s0te3fdxps" path="res://Resources/GameBalance.tres" id="2_66ryh"]
 [ext_resource type="PackedScene" uid="uid://cg8yt540127fo" path="res://Core/Combo/ComboPopUp/ComboPopUp.tscn" id="2_bs2mh"]
 
 [node name="ComboManager" type="Node" unique_id=597900910]
 script = ExtResource("1_gs8m6")
+balance = ExtResource("2_66ryh")
 combo_popup_scene = ExtResource("2_bs2mh")
 combo_phrases = Array[String](["Прелестно!", "Чудесно!", "Очаровательно!", "Волшебно!", "Изумительно!", "Восхитительно!", "Само Совершенство!"])
 

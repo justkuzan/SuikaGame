@@ -3,14 +3,40 @@
 [ext_resource type="Script" uid="uid://do0hru87van1x" path="res://Core/Combo/ComboPopUp/ComboPopUp.gd" id="1_wmctw"]
 [ext_resource type="LabelSettings" uid="uid://o6wl2qstblqh" path="res://Resources/Fonts/Playpens-96-Purple-WhiteShadow.tres" id="3_vm44t"]
 
+[sub_resource type="Gradient" id="Gradient_tpm8g"]
+offsets = PackedFloat32Array(0, 0.6377246)
+colors = PackedColorArray(0.5411765, 0.23921569, 0.45490196, 0.4627451, 0.5411765, 0.23921569, 0.45490196, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vm44t"]
+gradient = SubResource("Gradient_tpm8g")
+width = 20
+height = 20
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="ComboPopUp" type="CanvasLayer" unique_id=683500352]
+layer = 100
 script = ExtResource("1_wmctw")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1853443363]
+visible = false
+position = Vector2(540, 366)
+emitting = false
+amount = 100
+texture = SubResource("GradientTexture2D_vm44t")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
 
 [node name="ComboPopUp-Label" type="Label" parent="." unique_id=212244853]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 197.0
-offset_bottom = 343.0
+offset_top = 280.0
+offset_bottom = 426.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
