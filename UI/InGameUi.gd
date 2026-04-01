@@ -7,6 +7,7 @@ class_name InGameUI
 @onready var coins_label: Label = %"Coins-Label"
 @onready var combo_counter_label: Label = %"ComboCounter-Label"
 @onready var combo_pop_up_control: Control = %"ComboPopUp-Control"
+@onready var sound_button: Button = %"Sound-Button"
 
 
 func _ready() -> void:
@@ -68,3 +69,21 @@ func appearance_tween(label: Node) -> void:
 func disappearance_tween(label: Node) -> void:
 	var tween = create_tween()
 	tween.tween_property(label, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_BACK)
+
+
+func _on_sound_button_pressed() -> void:
+	var bus_idx = AudioServer.get_bus_index("Music")
+
+	if bus_idx == -1: return
+
+	var is_muted = AudioServer.is_bus_mute(bus_idx)
+	AudioServer.set_bus_mute(bus_idx, !is_muted)
+
+	_update_sound_icon(!is_muted)
+
+
+func _update_sound_icon(is_muted: bool) -> void:
+	if is_muted:
+		sound_button.modulate.a = 0.5
+	else:
+		sound_button.modulate.a = 1.0
